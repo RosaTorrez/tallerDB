@@ -160,13 +160,83 @@ async function seedRevenue(client) {
   }
 }
 
+// database 
+
+async function seedClient(client){
+  try {
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+    const createTable = await client.sql`
+      CREATE TABLE cliente (
+          id_cliente SERIAL PRIMARY KEY,
+          nombre VARCHAR(50) NOT NULL,
+          apellido VARCHAR(50) NOT NULL,
+          correo_electronico VARCHAR(50) NOT NULL,
+          activo BOOLEAN NOT NULL,
+          telefono int 
+      );
+    `;
+    return{
+      createTable
+    }
+  } catch (error) {
+    console.error('Error seeding revenue:', error);
+    throw error;
+  }
+}
+
 async function main() {
   const client = await db.connect();
 
-  await seedUsers(client);
-  await seedCustomers(client);
-  await seedInvoices(client);
-  await seedRevenue(client);
+  // await seedUsers(client);
+  // await seedCustomers(client);
+  // await seedInvoices(client);
+  // await seedRevenue(client);
+  await seedClient(client)
+
+  await client.end();
+}
+
+main().catch((err) => {
+  console.error(
+    'An error occurred while attempting to seed the database:',
+    err,
+  );
+});
+async function seedPelicula(pelicula){
+try{
+  await pelicula.sql `CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+  const createTable = await pelicula.sql`
+  CREATE TABLE pelicula (
+    id_pelicula SERIAL PRIMARY KEY,
+    titulo VARCHAR(50) NOT NULL,
+    descripcion VARCHAR(50),
+    ano_estreno SMALLINT NOT NULL,
+    id_idioma SMALLINT ,
+    id_idioma_original SMALLINT ,
+    duracion_alquiler SMALLINT NOT NULL,
+    tarifa_alquiler MONEY NOT NULL,
+    duracion INTERVAL NOT NULL,
+    costo_reemplazo MONEY NOT NULL,
+    clasificacion VARCHAR(50),
+    ultima_actualizacion TIMESTAMP NOT NULL
+    );
+    ';
+     return{
+      createTable
+  }catch (error) {
+    console.error('Error seeding revenue:', error);
+    throw error;
+  }
+}
+  
+async function main() {
+  const client = await db.connect();
+
+  // await seedUsers(client);
+  // await seedCustomers(client);
+  // await seedInvoices(client);
+  // await seedRevenue(client);
+  await seedClient(client)
 
   await client.end();
 }
