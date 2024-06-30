@@ -5,47 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59d05a0d-2f56-484a-bfbc-3086cc51de06" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/invoices/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/chartUtils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/about/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dashboard/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/data.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/definitions.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/placeholder-data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/placeholder-data.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/queries.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/lib/utils.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/seed/route.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/acme-logo.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/button.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/customers/table.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/cards.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/latest-invoices.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/nav-links.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/revenue-chart.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/dashboard/sidenav.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/fonts.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/global.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/invoices/breadcrumbs.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/invoices/buttons.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/invoices/create-form.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/invoices/edit-form.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/invoices/pagination.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/invoices/status.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/invoices/table.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/login-form.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/search.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ui/skeletons.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/connector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/connector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -84,22 +49,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "test",
-    "last_opened_file_path": "C:/Users/MSI/profile/programing/del/fixed/tallerDB/utils",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "npm.format.executor": "Run",
-    "ts.external.directory.path": "C:\\Users\\MSI\\profile\\programing\\del\\fixed\\tallerDB\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;test&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/MSI/profile/programing/del/fixed/tallerDB/utils&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;npm.format.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\MSI\\profile\\programing\\del\\fixed\\tallerDB\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\MSI\profile\programing\del\fixed\tallerDB\utils" />
