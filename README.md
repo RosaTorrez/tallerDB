@@ -30,6 +30,6 @@ yarn dev
 ## Intrucciones para trabajar con la base de datos
 
 - En el archivo `utils/connector.ts` se encuentra la configuración de la conexión a la base de datos
-- En el archivo `app/lib/queries.ts` debera definir las queries que necesite para trabajar con la base de datos, como ejemplo de referencia revise el archivo `app/lib/data.ts`
+- En el archivo `app/lib/queries.js` debera definir las queries que necesite para trabajar con la base de datos, como ejemplo de referencia revise el archivo `app/lib/data.ts`
 
 ## Mucha suerte en el proyecto

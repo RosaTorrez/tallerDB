@@ -1,20 +1,38 @@
+import {fetchLatestInvoices, updateCustomer} from "../lib/data";
 
-import { fetchLatestInvoices } from "../lib/data"
+export default async function DashboardPage() {
+  const res = await fetchLatestInvoices();
 
-export default async function DahboardPAge(){
+  console.log(res);
 
-    const res = await fetchLatestInvoices()
-
-    console.log(res);
-
-    return(
-        <div>
-            {res.map(item =>(
-                <>
-                    <h2>{item.name}</h2>
-                    <p>{item.amount}</p>
-                </>
-            ))}
+  return (
+      <div>
+        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+            {res.map((item) => (
+                <div key={item.id} className="group relative">
+                <div
+                    className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                  <img
+                      src={item.name === "Delba de Oliveira"? "/customers/delba-de-oliveira.jpg" : item.image_url}
+                      alt={item.name}
+                      className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                  />
+                </div>
+                <div className="mt-4 flex justify-between">
+                  <div>
+                    <h3 className="text-sm text-gray-700">
+                      <a href={"#"}>
+                        <span aria-hidden="true" className="absolute inset-0"/>
+                        {item.name}
+                      </a>
+                    </h3>
+                    <p className="mt-1 text-sm text-gray-500">{item.email}</p>
+                  </div>
+                  <p className="text-sm font-medium text-gray-900">{item.amount}</p>
+                </div>
+              </div>
+          ))}
         </div>
-    )
+      </div>
+  );
 }

@@ -1,4 +1,4 @@
-const { db } = require('@vercel/postgres');
+const { db } = require("@vercel/postgres");
 const {
   actor,
   categoria,
@@ -11,13 +11,13 @@ const {
   renta,
   revenue,
   users,
-} = require('../app/lib/placeholder-data.js');
-const bcrypt = require('bcrypt');
+} = require("../app/lib/placeholder-data.js");
+const bcrypt = require("bcrypt");
 
 async function seedActor(actor) {
-try {
-  // Create the "invoices" table if it doesn't exist
-  const createTable = await actor.sql`
+  try {
+    // Create the "invoices" table if it doesn't exist
+    const createTable = await actor.sql`
   CREATE TABLE IF NOT EXISTS actor (
   id_actor SERIAL PRIMARY KEY,
   nombre VARCHAR(50) NOT NULL,
@@ -26,35 +26,35 @@ try {
   );
   `;
 
-  console.log(`Created "invoices" table`);
+    console.log(`Created "invoices" table`);
 
-  // Insert data into the "invoices" table
-  const insertedInvoices = await Promise.all(
-    invoices.map(
-      (invoice) => client.sql`
+    // Insert data into the "invoices" table
+    const insertedInvoices = await Promise.all(
+      invoices.map(
+        (invoice) => client.sql`
       INSERT INTO invoices (customer_id, amount, status, date)
       VALUES (${invoice.customer_id}, ${invoice.amount}, ${invoice.status}, ${invoice.date})
       ON CONFLICT (id) DO NOTHING;
     `,
-    ),
-  );
+      ),
+    );
 
-  console.log(`Seeded ${insertedInvoices.length} invoices`);
+    console.log(`Seeded ${insertedInvoices.length} invoices`);
 
-  return {
-    createTable,
-    invoices: insertedInvoices,
-  };
-} catch (error) {
-  console.error('Error seeding invoices:', error);
-  throw error;
-}
+    return {
+      createTable,
+      invoices: insertedInvoices,
+    };
+  } catch (error) {
+    console.error("Error seeding invoices:", error);
+    throw error;
+  }
 }
 
 async function seedCategoria(categoria) {
-try {
-  // Create the "customers" table if it doesn't exist
-  const createTable = await categoria.sql`
+  try {
+    // Create the "customers" table if it doesn't exist
+    const createTable = await categoria.sql`
     CREATE TABLE IF NOT EXISTS categoria (
       id_categoria INT PRIMARY KEY
       nombre VARCHAR(50) NOT NULL,
@@ -62,32 +62,32 @@ try {
     );
   `;
 
-  console.log(`Created "customers" table`);
+    console.log(`Created "customers" table`);
 
-  // Insert data into the "customers" table
-  const insertedCustomers = await Promise.all(
-    customers.map(
-      (customer) => client.sql`
+    // Insert data into the "customers" table
+    const insertedCustomers = await Promise.all(
+      customers.map(
+        (customer) => client.sql`
       INSERT INTO customers (id, name, email, image_url)
       VALUES (${customer.id}, ${customer.name}, ${customer.email}, ${customer.image_url})
       ON CONFLICT (id) DO NOTHING;
     `,
-    ),
-  );
+      ),
+    );
 
-  console.log(`Seeded ${insertedCustomers.length} customers`);
+    console.log(`Seeded ${insertedCustomers.length} customers`);
 
-  return {
-    createTable,
-    customers: insertedCustomers,
-  };
+    return {
+      createTable,
+      customers: insertedCustomers,
+    };
   } catch (error) {
-    console.error('Error seeding customers:', error);
+    console.error("Error seeding customers:", error);
     throw error;
   }
 }
 
-async function seedCliente(cliente){
+async function seedCliente(cliente) {
   try {
     const createTable = await cliente.sql`
       CREATE TABLE cliente (
@@ -99,18 +99,18 @@ async function seedCliente(cliente){
           telefono INT
       );
     `;
-    return{
-      createTable
-    }
-  }catch (error) {
-    console.error('Error seeding revenue:', error);
+    return {
+      createTable,
+    };
+  } catch (error) {
+    console.error("Error seeding revenue:", error);
     throw error;
   }
 }
 
-async function seedPelicula(pelicula){
-try{
-  const createTable = await pelicula.sql`
+async function seedPelicula(pelicula) {
+  try {
+    const createTable = await pelicula.sql`
   CREATE TABLE pelicula (
     id_pelicula SERIAL PRIMARY KEY,
     titulo VARCHAR(50) NOT NULL,
@@ -132,20 +132,19 @@ try{
     ON DELETE CASCADE 
     );
     `;
-      return{
-      createTable
-      
-    }
-  }catch (error) {
-    console.error('Error seeding revenue:', error);
+    return {
+      createTable,
+    };
+  } catch (error) {
+    console.error("Error seeding revenue:", error);
     throw error;
   }
 }
 
 async function seedActor_Pelicula(actor_pelicula) {
-try {
-  // Create the "revenue" table if it doesn't exist
-  const createTable = await actor_pelicula.sql`
+  try {
+    // Create the "revenue" table if it doesn't exist
+    const createTable = await actor_pelicula.sql`
     CREATE TABLE IF NOT EXISTS actor_pelicula (
       id_actor INT,
       id_pelicula INT,
@@ -159,35 +158,35 @@ try {
     );
   `;
 
-  console.log(`Created "revenue" table`);
+    console.log(`Created "revenue" table`);
 
-  // Insert data into the "revenue" table
-  const insertedRevenue = await Promise.all(
-    revenue.map(
-      (rev) => client.sql`
+    // Insert data into the "revenue" table
+    const insertedRevenue = await Promise.all(
+      revenue.map(
+        (rev) => client.sql`
       INSERT INTO revenue (month, revenue)
       VALUES (${rev.month}, ${rev.revenue})
       ON CONFLICT (month) DO NOTHING;
     `,
-    ),
-  );
+      ),
+    );
 
-  console.log(`Seeded ${insertedRevenue.length} revenue`);
+    console.log(`Seeded ${insertedRevenue.length} revenue`);
 
-  return {
-    createTable,
-    revenue: insertedRevenue,
-  };
-  }catch (error) {
-  console.error('Error seeding revenue:', error);
-  throw error;
+    return {
+      createTable,
+      revenue: insertedRevenue,
+    };
+  } catch (error) {
+    console.error("Error seeding revenue:", error);
+    throw error;
   }
 }
 
 async function seedCategoria_Pelicula(categoria_pelicula) {
-try {
-  // Create the "categoria_pelicula" table if it doesn't exist
-  const createTable = await categoria_pelicula.sql`
+  try {
+    // Create the "categoria_pelicula" table if it doesn't exist
+    const createTable = await categoria_pelicula.sql`
     CREATE TABLE IF NOT EXISTS actor_pelicula (
       id_pelicula INT,
       id_categoria INT,
@@ -201,35 +200,35 @@ try {
     );
   `;
 
-  console.log(`Created "revenue" table`);
+    console.log(`Created "revenue" table`);
 
-  // Insert data into the "revenue" table
-  const insertedRevenue = await Promise.all(
-    revenue.map(
-      (rev) => client.sql`
+    // Insert data into the "revenue" table
+    const insertedRevenue = await Promise.all(
+      revenue.map(
+        (rev) => client.sql`
       INSERT INTO revenue (month, revenue)
       VALUES (${rev.month}, ${rev.revenue})
       ON CONFLICT (month) DO NOTHING;
     `,
-    ),
-  );
+      ),
+    );
 
-  console.log(`Seeded ${insertedRevenue.length} revenue`);
+    console.log(`Seeded ${insertedRevenue.length} revenue`);
 
-  return {
-    createTable,
-    revenue: insertedRevenue,
-  };
-  }catch (error) {
-  console.error('Error seeding revenue:', error);
-  throw error;
+    return {
+      createTable,
+      revenue: insertedRevenue,
+    };
+  } catch (error) {
+    console.error("Error seeding revenue:", error);
+    throw error;
   }
 }
 
 async function seedInventario(inventario) {
-try {
-  // Create the "clientes" table if it doesn't exist
-  const createTable = await inventario.sql`
+  try {
+    // Create the "clientes" table if it doesn't exist
+    const createTable = await inventario.sql`
     CREATE TABLE IF NOT EXISTS inventario (
       id_inventario SERIAL PRIMARY KEY,
       id_pelicula INT,
@@ -240,53 +239,53 @@ try {
     );
   `;
 
-  console.log(`Created "cliente" table`);
+    console.log(`Created "cliente" table`);
 
-  // Insert data into the "users" table
-  const insertedUsers = await Promise.all(
-    users.map(async (user) => {
-      const hashedPassword = await bcrypt.hash(user.password, 10);
-      return client.sql`
+    // Insert data into the "users" table
+    const insertedUsers = await Promise.all(
+      users.map(async (user) => {
+        const hashedPassword = await bcrypt.hash(user.password, 10);
+        return client.sql`
       INSERT INTO users (id, name, email, password)
       VALUES (${user.id}, ${user.name}, ${user.email}, ${hashedPassword})
       ON CONFLICT (id) DO NOTHING;
     `;
-    }),
-  );
+      }),
+    );
 
-  console.log(`Seeded ${insertedUsers.length} users`);
+    console.log(`Seeded ${insertedUsers.length} users`);
 
-  return {
-    createTable,
-    users: insertedUsers,
-  };
-  }catch (error) {
-  console.error('Error seeding users:', error);
-  throw error;
+    return {
+      createTable,
+      users: insertedUsers,
+    };
+  } catch (error) {
+    console.error("Error seeding users:", error);
+    throw error;
   }
 }
 
-async function seedIdioma(idioma){
-try{
-  const createTable = await idioma.sql`
+async function seedIdioma(idioma) {
+  try {
+    const createTable = await idioma.sql`
   CREATE TABLE idioma (
     id_idioma SERIAL PRIMARY KEY,
     nombre_idioma VARCHAR(20) NOT NULL,
     ultima_actualizacion TIMESTAMP
     );
     `;
-     return{
-      createTable  
-    }
-  }catch (error) {
-    console.error('Error seeding revenue:', error);
+    return {
+      createTable,
+    };
+  } catch (error) {
+    console.error("Error seeding revenue:", error);
     throw error;
   }
 }
 
-async function seedRenta(renta){
-try{
-  const createTable = await renta.sql`
+async function seedRenta(renta) {
+  try {
+    const createTable = await renta.sql`
   CREATE TABLE renta (
     id_renta SERIAL PRIMARY KEY,
     fecha_renta TIMESTAMP,
@@ -298,18 +297,18 @@ try{
     ON DELETE CASCADE
     );
     `;
-      return{
-      createTable  
-    }
-  }catch (error) {
-    console.error('Error seeding revenue:', error);
+    return {
+      createTable,
+    };
+  } catch (error) {
+    console.error("Error seeding revenue:", error);
     throw error;
   }
 }
 
 async function main() {
   const client = await db.connect();
-  
+
   // await seedUsers(client);
   // await seedCustomers(client);
   // await seedInvoices(client);
@@ -321,14 +320,14 @@ async function main() {
   await seedCategoria_Pelicula(client);
   await seedInventario(client);
   await seedIdioma(client);
-  await seedRenta(client)
+  await seedRenta(client);
 
   await client.end();
 }
 
 main().catch((err) => {
   console.error(
-    'An error occurred while attempting to seed the database:',
+    "An error occurred while attempting to seed the database:",
     err,
   );
 });
