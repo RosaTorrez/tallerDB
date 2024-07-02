@@ -1,7 +1,4 @@
-// This file contains type definitions for your data.
-// It describes the shape of the data, and what data type each property should accept.
-// For simplicity of teaching, we're manually defining these types.
-// However, these types are generated automatically if you're using an ORM such as Prisma.
+
 export type User = {
   id: string;
   name: string;
@@ -21,8 +18,7 @@ export type Invoice = {
   customer_id: string;
   amount: number;
   date: string;
-  // In TypeScript, this is called a string union type.
-  // It means that the "status" property can only be one of the two strings: 'pending' or 'paid'.
+
   status: "pending" | "paid";
 };
 
@@ -39,7 +35,7 @@ export type LatestInvoice = {
   amount: string;
 };
 
-// The database returns a number for amount, but we later format it to a string with the formatCurrency function
+
 export type LatestInvoiceRaw = Omit<LatestInvoice, "amount"> & {
   amount: number;
 };
@@ -86,3 +82,44 @@ export type InvoiceForm = {
   amount: number;
   status: "pending" | "paid";
 };
+
+// movie database types
+
+export type Actor = {
+  id_actor: number;
+  nombre: string;
+  apellido: string;
+  ultima_actualizacion: string;
+}
+
+
+export type Categoria = {
+  id_categoria: number;
+  nombre: string;
+  ultima_actualizacion: string;
+}
+
+export type Cliente = {
+  id_cliente: number;
+  nombre: string;
+  apellido: string;
+  correo_eletronico: string;
+  activo: boolean;
+  telefono: number;
+}
+
+
+export type Pelicula = {
+  id_pelicula: number;
+  titulo: string;
+  descripcion: string;
+  anio_estreno: number;
+  id_idioma: number;
+  id_idioma_original: number;
+  duracion_alquiler: number;
+  tarifa_alquiler: number;
+  costo_reemplazo: number;
+  duracion: number;
+  clasificacion: string;
+  ultima_actualizacion: string;
+}
