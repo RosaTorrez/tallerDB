@@ -130,7 +130,7 @@ export type Pelicula = {
   duracion_alquiler: number;
   tarifa_alquiler: number;
   costo_reemplazo: number;
-  duracion: number;
+  duracion: string;
   clasificacion: string;
   ultima_actualizacion: string;
 };
