@@ -15,12 +15,10 @@ export default function SideNav() {
             </div>
         </Link>
     <div className="flex grow md:justify-between justify-center gap-2 space-x-2 flex-col md:space-x-0 md:space-y-2">
-        <div className={"flex md:flex-col flex-row gap-5"}>
+        <div className={"flex md:flex-col flex-row gap-2 h-[75vh] overflow-auto"}>
             <NavLinks />
         </div>
-        <div className="hidden h-auto w-full grow md:block
-           dark:text-tremor-background-muted tremor-Callout-root rounded-tremor-default text-tremor-default bg-indigo-500 border-indigo-700 text-indigo-700 dark:bg-opacity-10 bg-opacity-10 border-l-4
-        "></div>
+
         <form className={"mt-auto"}>
             <button className="flex h-[48px] justify-center items-center w-full grow gap-2 font-medium md:flex-none md:justify-start md:p-2 md:px-3
                             tremor-Callout-root rounded-tremor-default text-tremor-default bg-red-700 border-red-700
