@@ -11,7 +11,7 @@ const {
   renta,
   revenue,
   users,
-} = require("../app/lib/placeholder-data.js");
+} = require("../src/app/lib/placeholder-data.js");
 const bcrypt = require("bcrypt");
 
 async function seedActor(actor) {
