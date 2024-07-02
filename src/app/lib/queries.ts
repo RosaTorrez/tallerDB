@@ -170,7 +170,6 @@ export async function fetchFilteredClients(
 
   try {
     const clients = await pool.query<Cliente>(queryText, values);
-    console.log(clients)
     return clients.rows;
   } catch (error) {
     console.error("Database Error:", error);
