@@ -332,7 +332,7 @@ main().catch((err) => {
   );
 });
 
-async function buildCreateClient() {
+async function buildCreateMovie() {
   await pool.query(`CREATE OR REPLACE FUNCTION agregar_peli(
     peli_titulo VARCHAR(50),
     peli_desc VARCHAR(200),
@@ -370,6 +370,79 @@ BEGIN
     peli_duracion,
     peli_clasificacion
     );
+END;
+$$ LANGUAGE plpgsql;
+`);
+}
+
+async function listeMovie(){
+  await pool.query(`
+    CREATE OR REPLACE FUNCTION buscar_peli(peli_titulo varchar)
+RETURNS TABLE(
+    id_pelicula INTEGER,
+    titulo VARCHAR,
+    descripcion VARCHAR,
+    anio_estreno SMALLINT,
+    id_idioma SMALLINT,
+    id_idioma_original SMALLINT,
+    duracion_alquiler SMALLINT,
+    tarifa_alquiler MONEY,
+    costo_reemplazo MONEY,
+    duracion INTERVAL,
+    clasificacion VARCHAR,
+    ultima_actualizacion TIMESTAMP
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT * FROM pelicula p
+    WHERE peli_titulo = p.titulo;
+END;
+$$ LANGUAGE plpgsql;
+`);
+}
+
+async function updateMovie(){
+  await pool.query(`
+    CREATE OR REPLACE FUNCTION actualizar_peli(
+    peli_id INTEGER,
+    peli_titulo VARCHAR,
+    peli_desc VARCHAR,
+    peli_anio SMALLINT,
+    peli_idioma SMALLINT,
+    peli_idioma_orig SMALLINT,
+    peli_duracion_alq SMALLINT,
+    peli_tarifa MONEY,
+    peli_reemplazo MONEY,
+    peli_duracion INTERVAL,
+    peli_clasificacion VARCHAR
+)
+RETURNS VOID AS $$
+BEGIN
+    UPDATE pelicula SET
+    titulo = peli_titulo,
+    descripcion = peli_desc,
+    anio_estreno = peli_anio,
+    id_idioma = peli_idioma,
+    id_idioma_original = peli_idioma_orig,
+    duracion_alquiler = peli_duracion_alq,
+    tarifa_alquiler = peli_tarifa,
+    costo_reemplazo = peli_reemplazo,
+    duracion = peli_duracion,
+    clasificacion = peli_clasificacion,
+    ultima_actualizacion = NOW()
+    WHERE peli_id = id_pelicula;
+END;
+$$ LANGUAGE plpgsql;
+`);
+}
+
+async function dropMovie(){
+  await pool.query(`
+    CREATE OR REPLACE FUNCTION borrar_peli(id_peli INTEGER)
+RETURNS VOID AS $$
+BEGIN
+    DELETE FROM pelicula
+    WHERE id_peli = id_pelicula;
 END;
 $$ LANGUAGE plpgsql;
 `);

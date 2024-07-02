@@ -734,9 +734,80 @@ const idioma = [
     nombre_idioma: "Árabe",
     ultima_actualizacion: "2020-12-31"
   },
-]
+];
 
-
+const renta = [
+  {
+    id_renta: 1,
+    fecha_renta: "2024-06-31",
+    id_cliente: 2,
+    fecha_pago: "2020-06-31",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_renta: 2,
+    fecha_renta: "2024-06-31",
+    id_cliente: 3,
+    fecha_pago: "2020-06-31",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_renta: 3,
+    fecha_renta: "2024-06-31",
+    id_cliente: 5,
+    fecha_pago: "2020-06-31",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_renta: 4,
+    fecha_renta: "2024-06-31",
+    id_cliente: 9,
+    fecha_pago: "2020-06-31",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_renta: 5,
+    fecha_renta: "2024-06-31",
+    id_cliente: 4,
+    fecha_pago: "2020-06-31",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_renta: 6,
+    fecha_renta: "2024-06-31",
+    id_cliente: 2,
+    fecha_pago: "2020-06-31",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_renta: 7,
+    fecha_renta: "2024-06-31",
+    id_cliente: 10,
+    fecha_pago: "2020-06-31",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_renta: 8,
+    fecha_renta: "2024-06-31",
+    id_cliente: 3,
+    fecha_pago: "2020-06-31",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_renta: 9,
+    fecha_renta: "2024-06-31",
+    id_cliente: 1,
+    fecha_pago: "2020-06-31",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_renta: 10,
+    fecha_renta: "2024-06-31",
+    id_cliente: 5,
+    fecha_pago: "2020-06-31",
+    ultima_actualizacion: "2020-12-31"
+  }
+];
 
 
 module.exports = {
