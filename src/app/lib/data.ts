@@ -48,7 +48,7 @@ export async function fetchLatestInvoices() {
       LIMIT 5
     `);
 
-    const latestInvoices = data.rows.map((invoice:any) => ({
+    const latestInvoices = data.rows.map((invoice: any) => ({
       ...invoice,
       amount: formatCurrency(invoice.amount),
     }));
@@ -207,7 +207,7 @@ export async function fetchInvoiceById(id: string) {
       FROM invoices
       WHERE invoices.id = ${id};`);
 
-    const invoice = data.rows.map((invoice:any) => ({
+    const invoice = data.rows.map((invoice: any) => ({
       ...invoice,
       // Convert amount from cents to dollars
       amount: invoice.amount / 100,
@@ -258,7 +258,7 @@ export async function fetchFilteredCustomers(query: string) {
                 ORDER BY customers.name ASC
           `);
 
-    const customers = data.rows.map((customer:any) => ({
+    const customers = data.rows.map((customer: any) => ({
       ...customer,
       total_pending: formatCurrency(customer.total_pending),
       total_paid: formatCurrency(customer.total_paid),
@@ -271,8 +271,11 @@ export async function fetchFilteredCustomers(query: string) {
   }
 }
 
-
-export async function updateCustomer(id: string, name: string, image_url: string) {
+export async function updateCustomer(
+  id: string,
+  name: string,
+  image_url: string,
+) {
   try {
     const res = await pool.query(`
       UPDATE customers

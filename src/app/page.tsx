@@ -32,11 +32,11 @@ export default function Page() {
           </Link>
         </div>
         <div className="flex rounded-lg items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12 bg-slate-50">
-            <img
-                src="/hero-desktop.png"
-                alt="Acme Illustration"
-                className="w-full"
-            />
+          <img
+            src="/hero-desktop.png"
+            alt="Acme Illustration"
+            className="w-full"
+          />
         </div>
       </div>
     </main>

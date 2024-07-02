@@ -1,4 +1,3 @@
-
 export type User = {
   id: string;
   name: string;
@@ -34,7 +33,6 @@ export type LatestInvoice = {
   email: string;
   amount: string;
 };
-
 
 export type LatestInvoiceRaw = Omit<LatestInvoice, "amount"> & {
   amount: number;
@@ -90,14 +88,13 @@ export type Actor = {
   nombre: string;
   apellido: string;
   ultima_actualizacion: string;
-}
-
+};
 
 export type Categoria = {
   id_categoria: number;
   nombre: string;
   ultima_actualizacion: string;
-}
+};
 
 export type Cliente = {
   id_cliente: number;
@@ -106,8 +103,7 @@ export type Cliente = {
   correo_eletronico: string;
   activo: boolean;
   telefono: number;
-}
-
+};
 
 export type Pelicula = {
   id_pelicula: number;
@@ -122,4 +118,4 @@ export type Pelicula = {
   duracion: number;
   clasificacion: string;
   ultima_actualizacion: string;
-}
+};

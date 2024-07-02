@@ -180,6 +180,71 @@ const revenue = [
   { month: "Dec", revenue: 4800 },
 ];
 
+// taller db data
+
+const actors = [
+  {
+    Id_actor: 1,
+    nombre: "Tom",
+    apellido: "Hanks",
+    ultima_actualizacion: "2020-12-31",
+  },
+  {
+    Id_actor: 2,
+    nombre: "Leonardo",
+    apellido: "DiCaprio",
+    ultima_actualizacion: "2020-12-31",
+  },
+  {
+    Id_actor: 3,
+    nombre: "Brad",
+    apellido: "Pitt",
+    ultima_actualizacion: "2020-12-31",
+  },
+  {
+    Id_actor: 4,
+    nombre: "Robert",
+    apellido: "Downey Jr.",
+    ultima_actualizacion: "2020-12-31",
+  },
+  {
+    Id_actor: 5,
+    nombre: "Chris",
+    apellido: "Hemsworth",
+    ultima_actualizacion: "2020-12-31",
+  },
+  {
+    Id_actor: 6,
+    nombre: "Scarlett",
+    apellido: "Johansson",
+    ultima_actualizacion: "2020-12-31",
+  },
+  {
+    Id_actor: 7,
+    nombre: "Dwayne",
+    apellido: "Johnson",
+    ultima_actualizacion: "2020-12-31",
+  },
+  {
+    Id_actor: 8,
+    nombre: "Jennifer",
+    apellido: "Aniston",
+    ultima_actualizacion: "2020-12-31",
+  },
+  {
+    Id_actor: 9,
+    nombre: "Ryan",
+    apellido: "Reynolds",
+    ultima_actualizacion: "2020-12-31",
+  },
+  {
+    Id_actor: 10,
+    nombre: "Gal",
+    apellido: "Gadot",
+    ultima_actualizacion: "2020-12-31",
+  },
+];
+
 module.exports = {
   users,
   customers,
