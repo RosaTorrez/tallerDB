@@ -92,7 +92,6 @@ export type Actor = {
   ultima_actualizacion: string;
 }
 
-
 export type Categoria = {
   id_categoria: number;
   nombre: string;
@@ -108,7 +107,6 @@ export type Cliente = {
   telefono: number;
 }
 
-
 export type Pelicula = {
   id_pelicula: number;
   titulo: string;
@@ -123,3 +121,36 @@ export type Pelicula = {
   clasificacion: string;
   ultima_actualizacion: string;
 }
+
+export type ActorPelicula = {
+  id_actor: number;
+  id_pelicula: number;
+  ultima_actualizacion: string;
+}
+
+export type CategoriaPelicula = {
+  id_pelicula: number;
+  id_categoria: number;
+  ultima_actualizacion: string;
+}
+
+export type Inventario = {
+  id_inventario: number;
+  id_pelicula: number;
+  ultima_actualizacion: string;
+}
+
+export type Idioma = {
+  id_idioma: number;
+  nombre_idioma: string;
+  ultima_actualizacion: string;
+}
+
+export type Renta = {
+  id_renta: number;
+  fecha_renta: string;
+  id_cliente: number;
+  fecha_pago: string;
+  ultima_actualizacion: string;
+}
+
