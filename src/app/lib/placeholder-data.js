@@ -184,66 +184,219 @@ const revenue = [
 
 const actors = [
   {
-    Id_actor: 1,
+    id_actor: 1,
     nombre: "Tom",
     apellido: "Hanks",
     ultima_actualizacion: "2020-12-31",
   },
   {
-    Id_actor: 2,
+    id_actor: 2,
     nombre: "Leonardo",
     apellido: "DiCaprio",
     ultima_actualizacion: "2020-12-31",
   },
   {
-    Id_actor: 3,
+    id_actor: 3,
     nombre: "Brad",
     apellido: "Pitt",
     ultima_actualizacion: "2020-12-31",
   },
   {
-    Id_actor: 4,
+    id_actor: 4,
     nombre: "Robert",
     apellido: "Downey Jr.",
     ultima_actualizacion: "2020-12-31",
   },
   {
-    Id_actor: 5,
+    id_actor: 5,
     nombre: "Chris",
     apellido: "Hemsworth",
     ultima_actualizacion: "2020-12-31",
   },
   {
-    Id_actor: 6,
+    id_actor: 6,
     nombre: "Scarlett",
     apellido: "Johansson",
     ultima_actualizacion: "2020-12-31",
   },
   {
-    Id_actor: 7,
+    id_actor: 7,
     nombre: "Dwayne",
     apellido: "Johnson",
     ultima_actualizacion: "2020-12-31",
   },
   {
-    Id_actor: 8,
+    id_actor: 8,
     nombre: "Jennifer",
     apellido: "Aniston",
     ultima_actualizacion: "2020-12-31",
   },
   {
-    Id_actor: 9,
+    id_actor: 9,
     nombre: "Ryan",
     apellido: "Reynolds",
     ultima_actualizacion: "2020-12-31",
   },
   {
-    Id_actor: 10,
+    id_actor: 10,
     nombre: "Gal",
     apellido: "Gadot",
     ultima_actualizacion: "2020-12-31",
   },
 ];
+
+const categories = [
+  {
+    id_categoria: 1,
+    nombre: "Acción",
+    ultima_actualizacion: "2020-12-31",
+  },
+  {
+    id_categoria: 2,
+    nombre: "Comedia",
+    ultima_actualizacion: "2020-12-31",
+  },
+  {
+    id_categoria: 3,
+    nombre: "Ciencia Ficción",
+    ultima_actualizacion: "2020-12-31",
+  },
+  {
+    id_categoria: 4,
+    nombre: "Terror",
+    ultima_actualizacion: "2020-12-31",
+  },
+  {
+    id_categoria: 5,
+    nombre: "Romance",
+    ultima_actualizacion: "2020-12-31",
+  },
+  {
+    id_categoria: 6,
+    nombre: "Animación",
+    ultima_actualizacion: "2020-12-31",
+  },
+  {
+    id_categoria: 7,
+    nombre: "Aventura",
+    ultima_actualizacion: "2020-12-31",
+  },
+  {
+    id_categoria: 8,
+    nombre: "Fantasía",
+    ultima_actualizacion: "2020-12-31",
+  },
+  {
+    id_categoria: 9,
+    nombre: "Documental",
+    ultima_actualizacion: "2020-12-31",
+  },
+  {
+    id_categoria: 10,
+    nombre: "Suspenso",
+    ultima_actualizacion: "2020-12-31",
+  },
+];
+
+const clients = [
+  {
+    id_cliente: 1,
+    nombre: "Juan",
+    apellido: "Pérez",
+    correo_electronico: "juan@example.com",
+    activo: true,
+    telefono: 123456789
+  },
+  {
+    id_cliente: 2,
+    nombre: "María",
+    apellido: "Gómez",
+    correo_electronico: "maria@example.com",
+    activo: true,
+    telefono: 987654321 
+  },
+  {
+    id_cliente: 3,
+    nombre: "Pedro",
+    apellido: "Martínez",
+    correo_electronico: "pedro@example.com",
+    activo: true,
+    telefono: 555444333
+  },
+  {
+    id_cliente: 4,
+    nombre: "Laura",
+    apellido: "López",
+    correo_electronico: "laura@example.com",
+    activo: true,
+    telefono: 111222333
+  },
+  {
+    id_cliente: 5,
+    nombre: "Carlos",
+    apellido: "Sánchez",
+    correo_electronico: "carlos@example.com",
+    activo: true,
+    telefono: 999888777
+  },
+  {
+    id_cliente: 6,
+    nombre: "Ana",
+    apellido: "García",
+    correo_electronico: "ana@example.com",
+    activo: true,
+    telefono: 333222111
+  },
+  {
+    id_cliente: 7,
+    nombre: "Luis",
+    apellido: "Fernández",
+    correo_electronico: "luis@example.com",
+    activo: true,
+    telefono: 777888999
+  },
+  {
+    id_cliente: 8,
+    nombre: "Elena",
+    apellido: "Rodríguez",
+    correo_electronico: "elena@example.com",
+    activo: true,
+    telefono: 665555444
+  },
+  {
+    id_cliente: 9,
+    nombre: "David",
+    apellido: "González",
+    correo_electronico: "david@example.com",
+    activo: true,
+    telefono: 444555566
+  },
+  {
+    id_cliente: 10,
+    nombre: "Sofía",
+    apellido: "Pérez",
+    correo_electronico: "juan@example.com",
+    activo: true,
+    telefono: 123456789
+  },
+];
+
+const movies = [
+  {
+    id_pelicula: 1,
+    titulo: "Titanic",
+    descripcion: "foto url",
+    anio_estreno: 2000,
+    id_idioma: 1,
+    id_idioma_original: 2,
+    duracion_alquiler: 5,
+    tarifa_alquiler: 3,
+    costo_reemplazo: 2,
+    duracion: 2,
+    clasificacion: "PG",
+    ultima_actualizacion: "2020-12-31"
+  },
+]
 
 module.exports = {
   users,
