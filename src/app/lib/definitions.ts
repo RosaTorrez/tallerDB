@@ -83,6 +83,19 @@ export type InvoiceForm = {
   status: "pending" | "paid";
 };
 
+export type ClientState = {
+  errors?:{
+    id_cliente?: string[];
+    nombre?: string[];
+    apellido?: string[];
+    correo_eletronico?: string[];
+    activo?: string[];
+    telefono?: string[];
+  };
+  message?: string | null;
+}
+
+
 // movie database types
 
 export type Actor = {
@@ -102,7 +115,7 @@ export type Cliente = {
   id_cliente: number;
   nombre: string;
   apellido: string;
-  correo_eletronico: string;
+  correo_electronico: string;
   activo: boolean;
   telefono: number;
 }

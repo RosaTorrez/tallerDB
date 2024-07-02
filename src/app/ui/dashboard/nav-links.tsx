@@ -26,12 +26,12 @@ const links = [
     children: [
       {
         name: "Crear Cliente",
-        href: "/dashboard/createClients",
+        href: "/dashboard/client/create",
         icon: DocumentDuplicateIcon,
       },
       {
         name: "Listar Cliente",
-        href: "/dashboard/ListClients",
+        href: "/dashboard/client/ListClients",
         icon: UserPlusIcon
       },
     ]
@@ -40,12 +40,12 @@ const links = [
     title: "Peliculas",
     children: [
       { name: "Listar Peliculas", 
-        href: "/dashboard/ListMovies", 
+        href: "/dashboard/movies/ListMovies",
         icon: HomeIcon 
       },
       {
         name: "Agregar Peliculas",
-        href: "/dashboard/createMovies",
+        href: "/dashboard/movies/createMovies",
         icon: DocumentDuplicateIcon,
       }
     ]
@@ -54,12 +54,12 @@ const links = [
     title: "Actores",
     children: [
       { name: "Agregar Actores", 
-        href: "/dashboard/createActors", 
+        href: "/dashboard/actors/createActors",
         icon: HomeIcon 
       },
       {
         name: "Listar Actores",
-        href: "/dashboard/listActors",
+        href: "/dashboard/actors/listActors",
         icon: DocumentDuplicateIcon,
       }
     ]
@@ -68,11 +68,11 @@ const links = [
     title: "Categorias",
     children: [
       { name: "Agregar Categorías", 
-        href: "/dashboard/createCategories", 
+        href: "/dashboard/categories/createCategories",
         icon: HomeIcon },
       {
         name: "Listar Categorías",
-        href: "/dashboard/listCategories",
+        href: "/dashboard/categories/listCategories",
         icon: DocumentDuplicateIcon,
       },
     ]
@@ -86,18 +86,18 @@ export default function NavLinks() {
       <>
         <Link
             href={"/dashboard"}
-            className={`flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 dark:bg-dark-tremor-background-muted p-3 font-medium md:flex-none md:justify-start md:p-2 md:px-3 text-tremor-default border-[.5px]
+            className={`flex md:h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 dark:bg-dark-tremor-background-muted p-3 font-medium md:flex-none md:justify-start md:p-2 md:px-3 text-tremor-default border-[.5px]
             ${pathname === '/dashboard' ? 'tremor-Callout-root bg-teal-500 border-teal-700 text-teal-700 font-bold dark:bg-opacity-10 bg-opacity-10 border-l-4 cursor-none' :
                 'dark:text-tremor-background-muted tremor-Callout-root rounded-tremor-default text-tremor-default bg-indigo-500 border-indigo-700 text-indigo-700 dark:bg-opacity-10 bg-opacity-10 border-l-4'}`}
         >
           <HomeIcon className="w-6" />
-          <p className="hidden md:block">Home</p>
+          <p className="block">Home</p>
         </Link>
-        <AccordionList>
-          {links.map((link) => {
+        <AccordionList className={"h-full"}>
+          {links.map((link, index) => {
 
             return (
-                <Accordion>
+                <Accordion key={index}>
                   <AccordionHeader>
                     {link.title}
                   </AccordionHeader>
@@ -113,7 +113,7 @@ export default function NavLinks() {
                                   'dark:text-tremor-background-muted tremor-Callout-root rounded-tremor-default text-tremor-default bg-indigo-500 border-indigo-700 text-indigo-700 dark:bg-opacity-10 bg-opacity-10 border-l-4'}`}
                           >
                             <LinkIcon className="w-6" />
-                            <p className="hidden md:block">{child.name}</p>
+                            <p className="block">{child.name}</p>
                           </Link>
                       );
                     })}

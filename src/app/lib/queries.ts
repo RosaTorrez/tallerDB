@@ -1,5 +1,6 @@
 import { pool } from "@/utils/connector";
-import { Actor, Categoria, Cliente, Pelicula } from "@/app/lib/definitions";
+import {Actor, Categoria, Cliente, InvoicesTable, Pelicula} from "@/app/lib/definitions";
+import {ITEMS_PER_PAGE} from "@/app/lib/variables";
 
 /**
  * Fetches all actors names from the database.
@@ -86,6 +87,18 @@ function selectHelper(tableName: string): string {
   return `SELECT * FROM ${tableName};`;
 }
 
+export async function createClientDb(client: Cliente) {
+  try {
+    const query = `SELECT agregar_cliente($1, $2, $3, $4);`;
+    const values = [client.nombre, client.apellido, client.correo_electronico, client.telefono];
+    const  res = await pool.query(query, values);
+    return res;
+  }catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to create client.");
+  }
+}
+
 async function buildCreateClient() {
   await pool.query(`CREATE OR REPLACE FUNCTION agregar_peli(
     peli_titulo VARCHAR(50),
@@ -127,4 +140,62 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 `);
+}
+
+
+export async function fetchFilteredClients(
+    query: string,
+    currentPage: number,
+): Promise<Cliente[]> {
+  const offset = (currentPage - 1) * ITEMS_PER_PAGE;
+
+  const queryText = `
+      SELECT
+        cliente.id_cliente,
+        cliente.nombre,
+        cliente.apellido,
+        cliente.correo_electronico,
+        cliente.telefono,
+        cliente.activo
+      FROM cliente
+      WHERE
+        cliente.nombre ILIKE $1 OR
+        cliente.apellido ILIKE $2 OR
+        cliente.correo_electronico ILIKE $3
+      ORDER BY cliente.nombre DESC
+      LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
+    `;
+
+  const values = [`%${query}%`, `%${query}%`, `%${query}%`];
+
+  try {
+    const clients = await pool.query<Cliente>(queryText, values);
+    console.log(clients)
+    return clients.rows;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch invoices.");
+  }
+}
+
+export async function fetchClientsPages(query: string) {
+  try {
+    const queryText = `
+      SELECT COUNT(*)
+      FROM cliente
+      WHERE
+        cliente.nombre ILIKE $1 OR
+        cliente.apellido ILIKE $2 OR
+        cliente.correo_electronico ILIKE $3
+    `;
+
+    const values = [`%${query}%`, `%${query}%`, `%${query}%`];
+    const count = await pool.query(queryText, values);
+
+    const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
+    return totalPages;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch total number of invoices.");
+  }
 }
