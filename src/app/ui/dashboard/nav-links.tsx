@@ -22,58 +22,62 @@ const links = [
 
 const links = [
   {
-    title: "Client",
+    title: "Clientes",
     children: [
-      { name: "Home", href: "/dashboard", icon: HomeIcon },
       {
-        name: "Invoices",
-        href: "/dashboard/invoices",
+        name: "Crear Cliente",
+        href: "/dashboard/createClients",
         icon: DocumentDuplicateIcon,
       },
       {
-        name: "Create User",
-        href: "/dashboard/create",
-        icon: UserPlusIcon,
+        name: "Listar Cliente",
+        href: "/dashboard/ListClients",
+        icon: UserPlusIcon
       },
     ]
   },
   {
-    title: "Movies",
+    title: "Peliculas",
     children: [
-      { name: "Home", href: "/dashboard", icon: HomeIcon },
-      {
-        name: "Invoices",
-        href: "/dashboard/invoices",
-        icon: DocumentDuplicateIcon,
+      { name: "Listar Peliculas", 
+        href: "/dashboard/ListMovies", 
+        icon: HomeIcon 
       },
-      { name: "Create User", href: "/dashboard/create", icon: UserPlusIcon },
-    ],
+      {
+        name: "Agregar Peliculas",
+        href: "/dashboard/createMovies",
+        icon: DocumentDuplicateIcon,
+      }
+    ]
   },
   {
-    title: "Movies",
+    title: "Actores",
     children: [
-      { name: "Home", href: "/dashboard", icon: HomeIcon },
-      {
-        name: "Invoices",
-        href: "/dashboard/invoices",
-        icon: DocumentDuplicateIcon,
+      { name: "Agregar Actores", 
+        href: "/dashboard/createActors", 
+        icon: HomeIcon 
       },
-      { name: "Create User", href: "/dashboard/create", icon: UserPlusIcon },
-    ],
+      {
+        name: "Listar Actores",
+        href: "/dashboard/listActors",
+        icon: DocumentDuplicateIcon,
+      }
+    ]
   },
   {
-    title: "Movies",
+    title: "Categorias",
     children: [
-      { name: "Home", href: "/dashboard", icon: HomeIcon },
+      { name: "Agregar Categorías", 
+        href: "/dashboard/createCategories", 
+        icon: HomeIcon },
       {
-        name: "Invoices",
-        href: "/dashboard/invoices",
+        name: "Listar Categorías",
+        href: "/dashboard/listCategories",
         icon: DocumentDuplicateIcon,
       },
-      { name: "Create User", href: "/dashboard/create", icon: UserPlusIcon },
-    ],
-  },
-];
+    ]
+  }
+]
 
 export default function NavLinks() {
   const pathname = usePathname()
