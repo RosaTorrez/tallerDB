@@ -13,8 +13,8 @@ const customers = [
     {
         id: '3958dc9e-712f-4377-85e9-fec4b6a6442a',
         name: 'Delba de Oliveira',
-        email: 'delba@oliveira.com',
-        image_url: '/customers/delba-de-oliveira.png',
+        last: 'delba@oliveira.com',
+        last_update: '/customers/delba-de-oliveira.png',
     },
     {
         id: '3958dc9e-742f-4377-85e9-fec4b6a6442a',
@@ -69,6 +69,12 @@ const customers = [
         name: 'Balazs Orban',
         email: 'balazs@orban.com',
         image_url: '/customers/balazs-orban.png',
+    },
+    {
+        id: '1010',
+        name: 'Tom',
+        last: 'Hanks',
+        last_update: '/customers/delba-de-oliveira.png',
     },
 ];
 
@@ -133,6 +139,8 @@ const invoices = [
         status: 'paid',
         date: '2023-06-07',
     },
+
+
     {
         customer_id: customers[1].id,
         amount: 500,
@@ -186,3 +194,4 @@ module.exports = {
     invoices,
     revenue,
 };
+
