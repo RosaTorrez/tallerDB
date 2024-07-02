@@ -331,3 +331,46 @@ main().catch((err) => {
     err,
   );
 });
+
+async function buildCreateClient() {
+  await pool.query(`CREATE OR REPLACE FUNCTION agregar_peli(
+    peli_titulo VARCHAR(50),
+    peli_desc VARCHAR(200),
+    peli_anio SMALLINT,
+    peli_idioma SMALLINT,
+    peli_idioma_orig SMALLINT,
+    peli_duracion_alq SMALLINT,
+    peli_tarifa MONEY,
+    peli_reemplazo MONEY,
+    peli_duracion INTERVAL,
+    peli_clasificacion VARCHAR(5)
+)
+RETURNS VOID AS $$
+BEGIN
+    INSERT INTO pelicula (
+    titulo,
+    descripcion,
+    anio_estreno,
+    id_idioma,
+    id_idioma_original,
+    duracion_alquiler,
+    tarifa_alquiler,
+    costo_reemplazo,
+    duracion,
+    clasificacion
+    ) 
+    VALUES (peli_titulo,
+    peli_desc,
+    peli_anio,
+    peli_idioma,
+    peli_idioma_orig,
+    peli_duracion_alq,
+    peli_tarifa,
+    peli_reemplazo,
+    peli_duracion,
+    peli_clasificacion
+    );
+END;
+$$ LANGUAGE plpgsql;
+`);
+}
