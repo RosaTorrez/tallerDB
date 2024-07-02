@@ -390,13 +390,354 @@ const movies = [
     id_idioma: 1,
     id_idioma_original: 2,
     duracion_alquiler: 5,
-    tarifa_alquiler: 3,
-    costo_reemplazo: 2,
-    duracion: 2,
+    tarifa_alquiler: 2.99,
+    costo_reemplazo: 9.99,
+    duracion: "2 hours",
     clasificacion: "PG",
     ultima_actualizacion: "2020-12-31"
   },
+  {
+    id_pelicula: 2,
+    titulo: "Mar 2",
+    descripcion: "foto url",
+    anio_estreno: 2005,
+    id_idioma: 2,
+    id_idioma_original: 2,
+    duracion_alquiler: 7,
+    tarifa_alquiler: 1.99,
+    costo_reemplazo: 8.99,
+    duracion: "2 hour 45 minutes",
+    clasificacion: "R",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_pelicula: 3,
+    titulo: "Dragon Ball",
+    descripcion: "foto url",
+    anio_estreno: 2010,
+    id_idioma: 3,
+    id_idioma_original: 4,
+    duracion_alquiler: 6,
+    tarifa_alquiler: 2.49,
+    costo_reemplazo: 7.99,
+    duracion: "2 hours 30 minutes",
+    clasificacion: "PG",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_pelicula: 4,
+    titulo: "Men in Black 3",
+    descripcion: "foto url",
+    anio_estreno: 2012,
+    id_idioma: 1,
+    id_idioma_original: 2,
+    duracion_alquiler: 6,
+    tarifa_alquiler: 4.99,
+    costo_reemplazo: 12.59,
+    duracion: "1 hour 46 minutes",
+    clasificacion: "PG",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_pelicula: 5,
+    titulo: "Intensa mente 2",
+    descripcion: "foto url",
+    anio_estreno: 2024,
+    id_idioma: 1,
+    id_idioma_original: 2,
+    duracion_alquiler: 7,
+    tarifa_alquiler: 5.99,
+    costo_reemplazo: 15.00,
+    duracion: "1 hour 36 minutes",
+    clasificacion: "PG",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_pelicula: 6,
+    titulo: "Guardianes de la Galaxia Vol.3",
+    descripcion: "foto url",
+    anio_estreno: 2023,
+    id_idioma: 1,
+    id_idioma_original: 2,
+    duracion_alquiler: 8,
+    tarifa_alquiler: 4.99,
+    costo_reemplazo: 12.99,
+    duracion: "2 hours 29 minutes",
+    clasificacion: "PG",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_pelicula: 7,
+    titulo: "Mujercitas",
+    descripcion: "foto url",
+    anio_estreno: 2019,
+    id_idioma: 1,
+    id_idioma_original: 2,
+    duracion_alquiler: 9,
+    tarifa_alquiler: 5.99,
+    costo_reemplazo: 17.99,
+    duracion: "2 hours 15 minutes",
+    clasificacion: "PG",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_pelicula: 8,
+    titulo: "Mi Amigo Robot",
+    descripcion: "foto url",
+    anio_estreno: 2023,
+    id_idioma: 2,
+    id_idioma_original: 2,
+    duracion_alquiler: 6,
+    tarifa_alquiler: 4.99,
+    costo_reemplazo: 20.99,
+    duracion: "1 hour 42 minutes",
+    clasificacion: "PG",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_pelicula: 9,
+    titulo: "El Rey León",
+    descripcion: "foto url",
+    anio_estreno: 1994,
+    id_idioma: 1,
+    id_idioma_original: 2,
+    duracion_alquiler: 8,
+    tarifa_alquiler: 2.99,
+    costo_reemplazo: 12.99,
+    duracion: "1 hour 28 minutes",
+    clasificacion: "PG",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_pelicula: 10,
+    titulo: "Cuestión de tiempo",
+    descripcion: "foto url",
+    anio_estreno: 2013,
+    id_idioma: 1,
+    id_idioma_original: 3,
+    duracion_alquiler: 8,
+    tarifa_alquiler: 5.99,
+    costo_reemplazo: 18.99,
+    duracion: "2 hours 3 minutes",
+    clasificacion: "PG",
+    ultima_actualizacion: "2020-12-31"
+  },
+];
+
+const actorPelicula = [
+  {
+    id_actor: 1,
+    id_pelicula: 2,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_actor: 1,
+    id_pelicula: 3,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_actor: 1,
+    id_pelicula: 4,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_actor: 2,
+    id_pelicula: 1,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_actor: 2,
+    id_pelicula: 9,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_actor: 2,
+    id_pelicula: 10,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_actor: 3,
+    id_pelicula: 1,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_actor: 3,
+    id_pelicula: 5,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_actor: 3,
+    id_pelicula: 7,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_actor: 6,
+    id_pelicula: 8,
+    ultima_actualizacion: "2020-12-31"
+  },
+];
+
+const categoriaPelicula = [
+  {
+    id_pelicula: 1,
+    id_categoria: 5,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_pelicula: 2,
+    id_categoria: 1,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_pelicula: 3,
+    id_categoria: 5,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_pelicula: 4,
+    id_categoria: 7,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_pelicula: 5,
+    id_categoria: 4,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_pelicula: 6,
+    id_categoria: 1,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_pelicula: 7,
+    id_categoria: 9,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_pelicula: 8,
+    id_categoria: 4,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_pelicula: 9,
+    id_categoria: 4,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_pelicula: 10,
+    id_categoria: 3,
+    ultima_actualizacion: "2020-12-31"
+  },
+];
+
+const inventario = [
+  {
+    id_inventario: 1,
+    id_pelicula: 1,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_inventario: 1,
+    id_pelicula: 2,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_inventario: 1,
+    id_pelicula: 3,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_inventario: 1,
+    id_pelicula: 4,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_inventario: 1,
+    id_pelicula: 5,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_inventario: 1,
+    id_pelicula: 6,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_inventario: 1,
+    id_pelicula: 7,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_inventario: 1,
+    id_pelicula: 8,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_inventario: 1,
+    id_pelicula: 9,
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_inventario: 1,
+    id_pelicula: 10,
+    ultima_actualizacion: "2020-12-31"
+  },
+];
+
+const idioma = [
+  {
+    id_idioma: 1,
+    nombre_idioma: "Español",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_idioma: 2,
+    nombre_idioma: "Inglés",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_idioma: 3,
+    nombre_idioma: "Francés",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_idioma: 4,
+    nombre_idioma: "Alemán",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_idioma: 5,
+    nombre_idioma: "Italiano",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_idioma: 6,
+    nombre_idioma: "Chino",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_idioma: 7,
+    nombre_idioma: "Japonés",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_idioma: 8,
+    nombre_idioma: "Ruso",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_idioma: 9,
+    nombre_idioma: "Portugués",
+    ultima_actualizacion: "2020-12-31"
+  },
+  {
+    id_idioma: 10,
+    nombre_idioma: "Árabe",
+    ultima_actualizacion: "2020-12-31"
+  },
 ]
+
+
+
 
 module.exports = {
   users,
