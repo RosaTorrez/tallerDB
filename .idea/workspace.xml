@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59d05a0d-2f56-484a-bfbc-3086cc51de06" name="Changes" comment="" />
+    <list default="true" id="59d05a0d-2f56-484a-bfbc-3086cc51de06" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/profile.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/client/ListClients/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/client/create/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/lib/variables.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/ui/client/buttons.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/ui/client/create-form.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/ui/client/table.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/lib/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/lib/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/lib/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/lib/data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/lib/definitions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/lib/definitions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/lib/queries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/lib/queries.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/ui/dashboard/nav-links.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/dashboard/nav-links.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/ui/dashboard/sidenav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/dashboard/sidenav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/ui/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/search.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -52,7 +68,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/MSI/profile/programing/del/fixed/tallerDB/utils&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/MSI/profile/programing/del/fixed/tallerDB/public&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -65,6 +81,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MSI\profile\programing\del\fixed\tallerDB\public" />
+      <recent name="C:\Users\MSI\profile\programing\del\fixed\tallerDB\src\app\ui\client" />
       <recent name="C:\Users\MSI\profile\programing\del\fixed\tallerDB\utils" />
       <recent name="C:\Users\MSI\profile\programing\del\fixed\tallerDB\public\customers" />
     </key>
@@ -107,6 +125,7 @@
       <workItem from="1719597580625" duration="2439000" />
       <workItem from="1719722916420" duration="118000" />
       <workItem from="1719759262919" duration="6489000" />
+      <workItem from="1719900956302" duration="16723000" />
     </task>
     <servers />
   </component>
