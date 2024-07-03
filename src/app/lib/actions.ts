@@ -2,12 +2,15 @@
 import { Cliente, ClientState } from "@/app/lib/definitions";
 import { Actor } from "@/app/lib/definitions";
 import { Pelicula } from "@/app/lib/definitions";
+import { Categoria } from "@/app/lib/definitions";
 import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClientDb } from "@/app/lib/queries";
 import { createActorDb } from "@/app/lib/queries";
 import { createMoviesDb } from "@/app/lib/queries";
+import { createCategoriesDb } from "@/app/lib/queries"; 
+
 import { pool } from "@/utils/connector";
 
 const ClientSchema = z.object({
@@ -106,6 +109,17 @@ const MovieSchema = z.object({
       })
 });
 
+const CategoriesSchema = z.object({
+    id_categoria: z.number(),
+    nombre: z
+      .string({
+        required_error: "El nombre de la categoría es requerida",
+      })
+      .min(3, {
+        message: "El nombre de la categoría debe tener al menos 3 caracteres",
+      }),
+});
+
 const createClientSchema = ClientSchema.omit({
   id_cliente: true,
   activo: true,
@@ -117,7 +131,10 @@ const createActorSchema = ActorSchema.omit({
 
 const createMovieSchema = MovieSchema.omit({
     id_pelicula: true,
+});
 
+const createCategoriesSchema = CategoriesSchema.omit({
+    id_categoria: true,
 });
 
 export async function createClient(state: any, formData: FormData) {
@@ -243,6 +260,43 @@ export async function createMovie(state:any, formData:FormData) {
       }
       revalidatePath("/dashboard/movies/ListMovies");
       redirect("/dashboard/movies/ListMovies");
+}
+
+export async function createCategories(state:any, formData:FormData) {
+    const validateFields = createCategoriesSchema.safeParse({
+        nombre: formData.get("name"),
+      });
+      console.log(validateFields);
+    
+      if (!validateFields.success) {
+        return {
+          errors: validateFields.error.flatten().fieldErrors,
+          message: "Por favor, corrija los errores en el formulario",
+          success: true,
+        };
+      }
+    
+      const categoria: Categoria = {
+        id_categoria: 0,
+        ...validateFields.data,
+      } as Categoria;
+      try {
+        await createCategoriesDb(categoria);
+      } catch (e: any) {
+        return {
+          error:
+            e instanceof z.ZodError
+              ? e.issues
+              : [
+                  {
+                    path: ["unknown"],
+                    message: e.message,
+                  },
+                ],
+        };
+      }
+      revalidatePath("/dashboard/categories/ListCategories");
+      redirect("/dashboard/Categories/ListCategories");
 }
 
 export async function deleteClient(id: number) {

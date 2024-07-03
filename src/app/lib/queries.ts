@@ -110,6 +110,57 @@ export async function createClientDb(client: Cliente) {
   }
 }
 
+export async function createActorDb(actor: Actor){
+  try{
+    const query = `SELECT agregar_actor($1, $2);`;
+    const values = [
+      actor.nombre,
+      actor.apellido,
+    ];
+    const res = await pool.query(query, values);
+    return res;
+  }catch(error){
+    console.error("Database Error:", error);
+    throw new Error("Failed to create client.");
+  }
+}
+
+export async function createMoviesDb(pelicula: Pelicula) {
+  try {
+    const query = `SELECT agregar_cliente($1, $2, $3, $4, $5, $6, $7, $8, $9);`;
+    const values = [
+      pelicula.titulo,
+      pelicula.descripcion,
+      pelicula.anio_estreno,
+      pelicula.id_idioma,
+      pelicula.id_idioma_original,
+      pelicula.duracion_alquiler,
+      pelicula.tarifa_alquiler,
+      pelicula.costo_reemplazo,
+      pelicula.duracion,
+    ];
+    const res = await pool.query(query, values);
+    return res;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to create client.");
+  }
+}
+
+export async function createCategoriesDb(categoria:Categoria) {
+  try {
+    const query = `SELECT agregar_cliente($1);`;
+    const values = [
+      categoria.nombre,
+    ];
+    const res = await pool.query(query, values);
+    return res;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to create client.");
+  }
+}
+
 async function buildCreateClient() {
   await pool.query(`CREATE OR REPLACE FUNCTION agregar_peli(
     peli_titulo VARCHAR(50),
