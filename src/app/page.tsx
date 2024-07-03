@@ -33,7 +33,7 @@ export default function Page() {
         </div>
         <div className="flex rounded-lg items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12 bg-slate-50">
           <img
-            src="/hero-desktop.png"
+            src="/icon.jpg"
             alt="Acme Illustration"
             className="w-full"
           />

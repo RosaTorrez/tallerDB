@@ -10,7 +10,7 @@ export default function Page() {
         className={
           "object-cover md:w-1/5 w-full rounded-xl shadow-xl shadow-indigo-800 md:block hidden"
         }
-        src={"/profile.jpg"}
+        src={"/icononet.jpg"}
       />
       <Form />
     </Card>
