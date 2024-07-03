@@ -81,7 +81,7 @@ const links = [
       },
       {
         name: "Listar Categorías",
-        href: "/dashboard/categories/listCategories",
+        href: "/dashboard/categories/ListCategories",
         icon: DocumentDuplicateIcon,
       },
     ],

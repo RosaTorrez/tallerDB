@@ -14,10 +14,10 @@ export function CreateClient() {
   );
 }
 
-export function UpdateClient({ id }: { id: number }) {
+export function UpdateCategory({ id }: { id: number }) {
   return (
     <Link
-      href={`/dashboard/client/${id}/update`}
+      href={`/dashboard/categories/${id}/update`}
       className="rounded-md p-2 hover:bg-gray-600 dark:hover:bg-gray-800 bg-dark-tremor-background-subtle hover:rounded-3xl transition-all duration-300 text-white"
     >
       <PencilIcon className="w-5" />
@@ -25,7 +25,7 @@ export function UpdateClient({ id }: { id: number }) {
   );
 }
 
-export function DeleteClient({ id }: { id: number }) {
+export function DeleteCategory({ id }: { id: number }) {
   const dispatch = deleteClient.bind(null, id);
   return (
     <>

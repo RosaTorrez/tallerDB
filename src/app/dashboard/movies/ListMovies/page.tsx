@@ -1,7 +1,5 @@
 import React from "react";
-import Form from "@/app/ui/invoices/create-form";
-import { fetchCustomers } from "@/app/lib/data"
-import { RiArrowDownSLine, RiArrowUpSLine } from '@remixicon/react';
+
 import {
         Table,
         TableBody,
@@ -130,4 +128,53 @@ const peliculasColumns = [
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
+}
+
+export default function Page() {
+
+  return (
+      <div>
+        <div className="flex justify-between items-center">
+          <h1 className="text-2xl font-bold">Películas</h1>
+          <div className="flex items-center space-x-2">
+            <button className="btn btn-primary">Crear Película</button>
+            <button className="btn btn-secondary">Exportar</button>
+          </div>
+        </div>
+        <Table>
+          <TableHead>
+            <TableRow>
+              {peliculasColumns.map((column) => (
+                <TableHeaderCell
+                  key={column.header}
+                  className={classNames(
+                    'px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider',
+                    column.meta?.align,
+                  )}
+                >
+                  {column.header}
+                </TableHeaderCell>
+              ))}
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {peliculas.map((pelicula) => (
+              <TableRow key={pelicula.id_pelicula}>
+                {peliculasColumns.map((column) => (
+                  <TableCell
+                    key={column.header}
+                    className={classNames(
+                      'px-6 py-4 whitespace-nowrap text-sm',
+                      column.meta?.align,
+                    )}
+                  >
+                    {pelicula.titulo}
+                  </TableCell>
+                ))}
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
+  )
 }
