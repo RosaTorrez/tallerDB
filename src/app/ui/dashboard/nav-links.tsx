@@ -45,15 +45,16 @@ const links = [
     title: "Peliculas",
     children: [
       {
-        name: "Listar Peliculas",
-        href: "/dashboard/movies/ListMovies",
-        icon: HomeIcon,
-      },
-      {
         name: "Agregar Peliculas",
         href: "/dashboard/movies/createMovies",
         icon: DocumentDuplicateIcon,
       },
+      {
+        name: "Listar Peliculas",
+        href: "/dashboard/movies/ListMovies",
+        icon: HomeIcon,
+      },
+      
     ],
   },
   {

@@ -260,6 +260,27 @@ export async function fetchClientsPages(query: string) {
   }
 }
 
+export async function fetchCategoriesPages(query:string) {
+  try {
+    const queryText = `
+      SELECT COUNT(*)
+      FROM categoria
+      WHERE
+        categoria.nombre ILIKE $1
+    `;
+
+    const values = [`%${query}%`];
+    const count = await pool.query(queryText, values);
+
+    const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
+    return totalPages;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch total number of invoices.");
+  }
+}
+
+
 export async function fetchClientById(id: string): Promise<Cliente>{
   try {
     const query = `SELECT * FROM cliente WHERE id_cliente = $1;`;
