@@ -284,70 +284,70 @@ const clients = [
     apellido: "Pérez",
     correo_electronico: "juan@example.com",
     activo: true,
-    telefono: 123456789
+    telefono: 123456789,
   },
   {
     nombre: "María",
     apellido: "Gómez",
     correo_electronico: "maria@example.com",
     activo: true,
-    telefono: 987654321 
+    telefono: 987654321,
   },
   {
     nombre: "Pedro",
     apellido: "Martínez",
     correo_electronico: "pedro@example.com",
     activo: true,
-    telefono: 555444333
+    telefono: 555444333,
   },
   {
     nombre: "Laura",
     apellido: "López",
     correo_electronico: "laura@example.com",
     activo: true,
-    telefono: 111222333
+    telefono: 111222333,
   },
   {
     nombre: "Carlos",
     apellido: "Sánchez",
     correo_electronico: "carlos@example.com",
     activo: true,
-    telefono: 999888777
+    telefono: 999888777,
   },
   {
     nombre: "Ana",
     apellido: "García",
     correo_electronico: "ana@example.com",
     activo: true,
-    telefono: 333222111
+    telefono: 333222111,
   },
   {
     nombre: "Luis",
     apellido: "Fernández",
     correo_electronico: "luis@example.com",
     activo: true,
-    telefono: 777888999
+    telefono: 777888999,
   },
   {
     nombre: "Elena",
     apellido: "Rodríguez",
     correo_electronico: "elena@example.com",
     activo: true,
-    telefono: 665555444
+    telefono: 665555444,
   },
   {
     nombre: "David",
     apellido: "González",
     correo_electronico: "david@example.com",
     activo: true,
-    telefono: 444555566
+    telefono: 444555566,
   },
   {
     nombre: "Sofía",
     apellido: "Pérez",
     correo_electronico: "juan@example.com",
     activo: true,
-    telefono: 123456789
+    telefono: 123456789,
   },
 ];
 
@@ -363,7 +363,7 @@ const movies = [
     costo_reemplazo: 9.99,
     duracion: "2 hours",
     clasificacion: "PG",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     titulo: "Mar 2",
@@ -376,7 +376,7 @@ const movies = [
     costo_reemplazo: 8.99,
     duracion: "2 hour 45 minutes",
     clasificacion: "R",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     titulo: "Dragon Ball",
@@ -389,7 +389,7 @@ const movies = [
     costo_reemplazo: 7.99,
     duracion: "2 hours 30 minutes",
     clasificacion: "PG",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     titulo: "Men in Black 3",
@@ -402,7 +402,7 @@ const movies = [
     costo_reemplazo: 12.59,
     duracion: "1 hour 46 minutes",
     clasificacion: "PG",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     titulo: "Intensa mente 2",
@@ -412,10 +412,10 @@ const movies = [
     id_idioma_original: 2,
     duracion_alquiler: 7,
     tarifa_alquiler: 5.99,
-    costo_reemplazo: 15.00,
+    costo_reemplazo: 15.0,
     duracion: "1 hour 36 minutes",
     clasificacion: "PG",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     titulo: "Guardianes de la Galaxia Vol.3",
@@ -428,7 +428,7 @@ const movies = [
     costo_reemplazo: 12.99,
     duracion: "2 hours 29 minutes",
     clasificacion: "PG",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     titulo: "Mujercitas",
@@ -441,7 +441,7 @@ const movies = [
     costo_reemplazo: 17.99,
     duracion: "2 hours 15 minutes",
     clasificacion: "PG",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     titulo: "Mi Amigo Robot",
@@ -454,7 +454,7 @@ const movies = [
     costo_reemplazo: 20.99,
     duracion: "1 hour 42 minutes",
     clasificacion: "PG",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     titulo: "El Rey León",
@@ -467,7 +467,7 @@ const movies = [
     costo_reemplazo: 12.99,
     duracion: "1 hour 28 minutes",
     clasificacion: "PG",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     titulo: "Cuestión de tiempo",
@@ -480,7 +480,7 @@ const movies = [
     costo_reemplazo: 18.99,
     duracion: "2 hours 3 minutes",
     clasificacion: "PG",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
 ];
 
@@ -488,52 +488,52 @@ const actorPelicula = [
   {
     id_actor: 1,
     id_pelicula: 2,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_actor: 1,
     id_pelicula: 3,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_actor: 1,
     id_pelicula: 4,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_actor: 2,
     id_pelicula: 1,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_actor: 2,
     id_pelicula: 9,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_actor: 2,
     id_pelicula: 10,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_actor: 3,
     id_pelicula: 1,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_actor: 3,
     id_pelicula: 5,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_actor: 3,
     id_pelicula: 7,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_actor: 6,
     id_pelicula: 8,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
 ];
 
@@ -541,52 +541,52 @@ const categoriaPelicula = [
   {
     id_pelicula: 1,
     id_categoria: 5,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_pelicula: 2,
     id_categoria: 1,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_pelicula: 3,
     id_categoria: 5,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_pelicula: 4,
     id_categoria: 7,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_pelicula: 5,
     id_categoria: 4,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_pelicula: 6,
     id_categoria: 1,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_pelicula: 7,
     id_categoria: 9,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_pelicula: 8,
     id_categoria: 4,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_pelicula: 9,
     id_categoria: 4,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_pelicula: 10,
     id_categoria: 3,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
 ];
 
@@ -594,95 +594,95 @@ const inventario = [
   {
     id_inventario: 1,
     id_pelicula: 1,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_inventario: 1,
     id_pelicula: 2,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_inventario: 1,
     id_pelicula: 3,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_inventario: 1,
     id_pelicula: 4,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_inventario: 1,
     id_pelicula: 5,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_inventario: 1,
     id_pelicula: 6,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_inventario: 1,
     id_pelicula: 7,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_inventario: 1,
     id_pelicula: 8,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_inventario: 1,
     id_pelicula: 9,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     id_inventario: 1,
     id_pelicula: 10,
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
 ];
 
 const idioma = [
   {
     nombre_idioma: "Español",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     nombre_idioma: "Inglés",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     nombre_idioma: "Francés",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     nombre_idioma: "Alemán",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     nombre_idioma: "Italiano",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     nombre_idioma: "Chino",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     nombre_idioma: "Japonés",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     nombre_idioma: "Ruso",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     nombre_idioma: "Portugués",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     nombre_idioma: "Árabe",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
 ];
 
@@ -691,64 +691,63 @@ const renta = [
     fecha_renta: "2024-06-31",
     id_cliente: 2,
     fecha_pago: "2020-06-31",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     fecha_renta: "2024-06-31",
     id_cliente: 3,
     fecha_pago: "2020-06-31",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     fecha_renta: "2024-06-31",
     id_cliente: 5,
     fecha_pago: "2020-06-31",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     fecha_renta: "2024-06-31",
     id_cliente: 9,
     fecha_pago: "2020-06-31",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     fecha_renta: "2024-06-31",
     id_cliente: 4,
     fecha_pago: "2020-06-31",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     fecha_renta: "2024-06-31",
     id_cliente: 2,
     fecha_pago: "2020-06-31",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     fecha_renta: "2024-06-31",
     id_cliente: 10,
     fecha_pago: "2020-06-31",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     fecha_renta: "2024-06-31",
     id_cliente: 3,
     fecha_pago: "2020-06-31",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     fecha_renta: "2024-06-31",
     id_cliente: 1,
     fecha_pago: "2020-06-31",
-    ultima_actualizacion: "2020-12-31"
+    ultima_actualizacion: "2020-12-31",
   },
   {
     fecha_renta: "2024-06-31",
     id_cliente: 5,
     fecha_pago: "2020-06-31",
-    ultima_actualizacion: "2020-12-31"
-  }
+    ultima_actualizacion: "2020-12-31",
+  },
 ];
-
 
 module.exports = {
   users,

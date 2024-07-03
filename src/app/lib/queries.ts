@@ -208,3 +208,15 @@ export async function fetchClientsPages(query: string) {
     throw new Error("Failed to fetch total number of invoices.");
   }
 }
+
+export async function fetchClientById(id: string): Promise<Cliente>{
+  try {
+    const query = `SELECT * FROM cliente WHERE id_cliente = $1;`;
+    const value = [id];
+    const client = await pool.query<Cliente>(query, value);
+    return client.rows[0];
+  }catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch client data.");
+  }
+}

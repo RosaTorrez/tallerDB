@@ -5,62 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59d05a0d-2f56-484a-bfbc-3086cc51de06" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/dashboard/client/[id]/update/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/ui/client/updateForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prettier.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/prettier.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/seed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/about/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/about/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/client/ListClients/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/client/ListClients/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/client/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/client/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/create/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/create/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/invoices/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/invoices/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/lib/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/lib/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/lib/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/lib/data.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/lib/definitions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/lib/definitions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/lib/placeholder-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/lib/placeholder-data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/lib/placeholder-data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/lib/placeholder-data.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/lib/queries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/lib/queries.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/lib/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/lib/variables.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/lib/variables.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/seed/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/seed/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/acme-logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/acme-logo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/button.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/ui/client/buttons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/client/buttons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/client/create-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/client/create-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/client/table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/client/table.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/customers/table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/customers/table.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/dashboard/cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/dashboard/cards.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/dashboard/charts/BuildAreaChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/dashboard/charts/BuildAreaChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/dashboard/latest-invoices.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/dashboard/latest-invoices.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/dashboard/nav-links.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/dashboard/nav-links.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/dashboard/revenue-chart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/dashboard/revenue-chart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/dashboard/sidenav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/dashboard/sidenav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/fonts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/fonts.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/invoices/breadcrumbs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/invoices/breadcrumbs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/invoices/buttons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/invoices/buttons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/invoices/create-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/invoices/create-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/invoices/edit-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/invoices/edit-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/invoices/pagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/invoices/pagination.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/invoices/status.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/invoices/status.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/invoices/table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/invoices/table.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/login-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/login-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/skeletons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/skeletons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useOnWindowResize.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useOnWindowResize.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/chartUtils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/chartUtils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/connector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/connector.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

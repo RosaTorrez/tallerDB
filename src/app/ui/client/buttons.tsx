@@ -1,5 +1,6 @@
 import { PencilIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { deleteClient } from "@/app/lib/actions";
 
 export function CreateClient() {
   return (
@@ -16,7 +17,7 @@ export function CreateClient() {
 export function UpdateClient({ id }: { id: number }) {
   return (
     <Link
-      href="/dashboard/client"
+      href={`/dashboard/client/${id}/update`}
       className="rounded-md p-2 hover:bg-gray-600 dark:hover:bg-gray-800 bg-dark-tremor-background-subtle hover:rounded-3xl transition-all duration-300 text-white"
     >
       <PencilIcon className="w-5" />
@@ -25,12 +26,15 @@ export function UpdateClient({ id }: { id: number }) {
 }
 
 export function DeleteClient({ id }: { id: number }) {
+  const dispatch = deleteClient.bind(null, id);
   return (
     <>
-      <button className="rounded-md p-2 hover:bg-red-600 dark:hover:bg-red-800 bg-red-600 hover:rounded-3xl transition-all duration-300 text-white">
-        <span className="sr-only">Delete</span>
-        <TrashIcon className="w-5" />
-      </button>
+      <form action={dispatch}>
+        <button className="rounded-md p-2 hover:bg-red-600 dark:hover:bg-red-800 bg-red-600 hover:rounded-3xl transition-all duration-300 text-white">
+          <span className="sr-only">Delete</span>
+          <TrashIcon className="w-5" />
+        </button>
+      </form>
     </>
   );
 }
