@@ -336,6 +336,28 @@ export async function updateCategoryDb(id: number, state:any, formData:FormData)
     redirect("/dashboard/categories/ListCategories");
 }
 
+export async function deleteCategory(id: number) {
+    try {
+      const query = `DELETE FROM categoria WHERE id_categoria = $1;`;
+      const values = [id];
+      await pool.query(query, values);
+    } catch (e: any) {
+        return {
+            error:
+                e instanceof z.ZodError
+                    ? e.issues
+                    : [
+                        {
+                            path: ["unknown"],
+                            message: e.message,
+                        },
+                    ],
+        };
+    }
+    revalidatePath("/dashboard/categories/ListCategories");
+    redirect("/dashboard/categories/ListCategories");
+}
+
 export async function deleteClient(id: number) {
   try {
     const query = `SELECT eliminar_cliente($1);`;

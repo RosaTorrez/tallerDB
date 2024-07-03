@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59d05a0d-2f56-484a-bfbc-3086cc51de06" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/categories/ListCategories/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/dashboard/categories/[id]/update/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/seed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/dashboard/movies/ListMovies/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/movies/ListMovies/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/lib/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/lib/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/lib/queries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/lib/queries.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/ui/categories/buttons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/categories/buttons.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/ui/categories/updateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/categories/updateForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ui/dashboard/nav-links.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/dashboard/nav-links.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +119,7 @@
       <workItem from="1719759262919" duration="6489000" />
       <workItem from="1719900956302" duration="16723000" />
       <workItem from="1719944782426" duration="1438000" />
-      <workItem from="1720027439707" duration="10321000" />
+      <workItem from="1720027439707" duration="11671000" />
     </task>
     <servers />
   </component>
@@ -136,5 +131,17 @@
         <option value="$PROJECT_DIR$/src/utils/connector.js" />
       </list>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/scripts/seed.js</url>
+          <line>368</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

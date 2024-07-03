@@ -32,7 +32,6 @@ async function seedCategoria() {
         ultima_actualizacion TIMESTAMP NOT NULL
       );
     `)
-
     console.log(`Created "categories" table`);
 
     return {
@@ -377,8 +376,8 @@ async function createClient() {
     )
     RETURNS VOID AS $$
     BEGIN
-        INSERT INTO cliente ( nombre, apellido, correo_electronico, telefono)
-        VALUES( cliente_nombre, cliente_apellido, cliente_correo, cliente_telefono);
+        INSERT INTO cliente ( nombre, apellido, correo_electronico, telefono, activo)
+        VALUES( cliente_nombre, cliente_apellido, cliente_correo, cliente_telefono, true);
     END;
     $$ LANGUAGE plpgsql;
   `);

@@ -27,6 +27,7 @@ export default function UpdateCategoryForm({category}: {category:Categoria}) {
                           name="name"
                           type="text"
                           className={"py-3 text-base font-bold"}
+                          defaultValue={category.nombre}
                           placeholder="Enter category name"
                           error={state?.errors?.nombre && state.success}
                           errorMessage={state?.errors?.nombre && state.errors.nombre[0]}

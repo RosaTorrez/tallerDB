@@ -1,6 +1,6 @@
 import { PencilIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { deleteClient } from "@/app/lib/actions";
+import { deleteCategory } from "@/app/lib/actions";
 
 export function CreateClient() {
   return (
@@ -26,7 +26,7 @@ export function UpdateCategory({ id }: { id: number }) {
 }
 
 export function DeleteCategory({ id }: { id: number }) {
-  const dispatch = deleteClient.bind(null, id);
+  const dispatch = deleteCategory.bind(null, id);
   return (
     <>
       <form action={dispatch}>
