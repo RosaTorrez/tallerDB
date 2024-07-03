@@ -750,8 +750,13 @@ const renta = [
 ];
 
 module.exports = {
-  users,
-  customers,
-  invoices,
-  revenue,
+  actors, 
+  categories, 
+  clients, 
+  movies, 
+  actorPelicula, 
+  categoriaPelicula, 
+  inventario, 
+  idioma, 
+  renta
 };

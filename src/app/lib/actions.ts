@@ -1,9 +1,13 @@
 "use server";
 import { Cliente, ClientState } from "@/app/lib/definitions";
+import { Actor } from "@/app/lib/definitions";
+import { Pelicula } from "@/app/lib/definitions";
 import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClientDb } from "@/app/lib/queries";
+import { createActorDb } from "@/app/lib/queries";
+import { createMoviesDb } from "@/app/lib/queries";
 import { pool } from "@/utils/connector";
 
 const ClientSchema = z.object({
@@ -37,9 +41,83 @@ const ClientSchema = z.object({
   }),
 });
 
+const ActorSchema = z.object({
+    id_actor: z.number(),
+    nombre: z
+      .string({
+        required_error: "El nombre del actor es requerido",
+      })
+      .min(3, {
+        message: "El nombre del actor debe tener al menos 3 caracteres",
+      }),
+    apellido: z
+      .string({
+        required_error: "El apellido del actor es requerido",
+      })
+      .min(3, {
+        message: "El apellido del actor debe tener al menos 3 caracteres",
+      }),
+});
+
+const MovieSchema = z.object({
+    id_pelicula: z.number(),
+    titulo: z
+      .string({
+        required_error: "El titulo de la película es requerido",
+      })
+      .min(2, {
+        message: "El nombre de la película debe tener al menos 2 caracteres",
+      }),
+    descripcion: z
+      .string({
+        required_error: "El enlace de la pelicula es requerida",
+      }),
+    anio_estreno: z
+      .number({
+        required_error: "El año de estreno es requerido",
+      }),
+    id_idioma: z
+      .number({
+        required_error: "El idioma es requerido",
+      }),
+    id_idioma_original: z
+      .number({
+        required_error: "El idioma original principal es requerido",
+      }),
+    duracion_alquiler: z
+      .number({
+        required_error: "La duracion del alquiler es requerida",
+      }),
+    tarifa_alquiler: z
+      .number({
+        required_error: "La tarifa del alquiler es requerida",
+      }),
+    costo_reemplazo: z
+      .number({
+        required_error: "El costo de reemplazo es requerido",
+      }),
+    duracion: z
+      .string({
+        required_error: "La duracion de la pelicula es requerida",
+      }),
+    clasificacion: z
+      .string({
+        required_error: "La clasificacion de la película es requerido",
+      })
+});
+
 const createClientSchema = ClientSchema.omit({
   id_cliente: true,
   activo: true,
+});
+
+const createActorSchema = ActorSchema.omit({
+    id_actor: true,
+});
+
+const createMovieSchema = MovieSchema.omit({
+    id_pelicula: true,
+
 });
 
 export async function createClient(state: any, formData: FormData) {
@@ -81,6 +159,90 @@ export async function createClient(state: any, formData: FormData) {
   }
   revalidatePath("/dashboard/client/ListClients");
   redirect("/dashboard/client/ListClients");
+}
+
+export async function createActor(state:any, formData:FormData) {
+    const validateFields = createActorSchema.safeParse({
+        nombre: formData.get("name"),
+        apellido: formData.get("lastName"),
+      });
+      console.log(validateFields);
+    
+      if (!validateFields.success) {
+        return {
+          errors: validateFields.error.flatten().fieldErrors,
+          message: "Por favor, corrija los errores en el formulario",
+          success: true,
+        };
+      }
+    
+      const actor: Actor = {
+        id_actor: 0,
+        ...validateFields.data,
+      } as Actor;
+      try {
+        await createActorDb(actor);
+      } catch (e: any) {
+        return {
+          error:
+            e instanceof z.ZodError
+              ? e.issues
+              : [
+                  {
+                    path: ["unknown"],
+                    message: e.message,
+                  },
+                ],
+        };
+      }
+      revalidatePath("/dashboard/actors/ListActors");
+      redirect("/dashboard/actors/ListActors");
+}
+
+export async function createMovie(state:any, formData:FormData) {
+    const validateFields = createMovieSchema.safeParse({
+        titulo: formData.get("title"),
+        descripcion: formData.get("url"),
+        anio_estreno: Number(formData.get("anio_estreno")),
+        id_idioma:Number(formData.get("id_idioma")),
+        id_idioma_original:Number(formData.get("id_idioma_original")),
+        duracion_alquiler: Number(formData.get("duracion_alquiler")),
+        tarifa_alquiler: Number(formData.get("tarifa_alquiler")),
+        costo_reemplazo: Number(formData.get("costo_reemplazo")),
+        duracion: formData.get("duracion"),
+        clasificacion: formData.get("clasificacion"),
+      });
+      console.log(validateFields);
+    
+      if (!validateFields.success) {
+        return {
+          errors: validateFields.error.flatten().fieldErrors,
+          message: "Por favor, corrija los errores en el formulario",
+          success: true,
+        };
+      }
+    
+      const pelicula: Pelicula = {
+        id_pelicula: 0,
+        ...validateFields.data,
+      } as Pelicula;
+      try {
+        await createMoviesDb(pelicula);
+      } catch (e: any) {
+        return {
+          error:
+            e instanceof z.ZodError
+              ? e.issues
+              : [
+                  {
+                    path: ["unknown"],
+                    message: e.message,
+                  },
+                ],
+        };
+      }
+      revalidatePath("/dashboard/movies/ListMovies");
+      redirect("/dashboard/movies/ListMovies");
 }
 
 export async function deleteClient(id: number) {

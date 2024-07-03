@@ -1,6 +1,6 @@
 const { db } = require("@vercel/postgres");
 const {
-  actor,
+  actors,
   categoria,
   cliente,
   pelicula,
@@ -15,10 +15,10 @@ const {
 const bcrypt = require("bcrypt");
 const { fuchsia } = require("tailwindcss/colors.js");
 
-async function seedActor(actor) {
+async function seedActor() {
   try {
     // Create the "invoices" table if it doesn't exist
-    const createTable = await actor.sql`
+    const createTable = await actors.sql`
   CREATE TABLE IF NOT EXISTS actor (
   id_actor SERIAL PRIMARY KEY,
   nombre VARCHAR(50) NOT NULL,
@@ -444,6 +444,29 @@ RETURNS VOID AS $$
 BEGIN
     DELETE FROM pelicula
     WHERE id_peli = id_pelicula;
+END;
+$$ LANGUAGE plpgsql;
+`);
+}
+
+async function createActors() {
+  await pool.query(`
+    CREATE OR REPLACE FUNCTION agregar_actor(
+    cliente_nombre VARCHAR,
+    cliente_apellido VARCHAR,
+)
+RETURNS VOID AS $$
+BEGIN
+    INSERT INTO actor (
+        nombre,
+        apellido,
+        ultima_actualizacion
+    )
+    VALUES(
+        cliente_nombre,
+        cliente_apellido,
+        NOW()
+    );
 END;
 $$ LANGUAGE plpgsql;
 `);
