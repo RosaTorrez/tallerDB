@@ -1,13 +1,18 @@
 import React from "react";
 
 import {
-        Table,
-        TableBody,
-        TableCell,
-        TableHead,
-        TableHeaderCell,
-        TableRow,
-} from '@tremor/react'; 
+  Button,
+  Card,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeaderCell,
+  TableRow,
+} from '@tremor/react';
+import {lusitana} from "@/app/ui/fonts";
+import {PlusIcon} from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 const peliculas = [
   {
@@ -133,48 +138,64 @@ function classNames(...classes: string[]) {
 export default function Page() {
 
   return (
-      <div>
-        <div className="flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Películas</h1>
-          <div className="flex items-center space-x-2">
-            <button className="btn btn-primary">Crear Película</button>
-            <button className="btn btn-secondary">Exportar</button>
+      <Card className={'flex flex-col gap-5'}>
+        <Card className="flex justify-between items-center w-full">
+          <h1 className={`${lusitana.className} text-2xl font-bold`}>Películas</h1>
+          <div className="flex gap-5">
+            <button
+                className="flex items-center p-4 rounded-lg bg-blue-600 font-medium text-white transition-colors hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            >
+                  <span className="hidden md:block">
+                      Crear Película
+                  </span>{" "}
+              <PlusIcon className="h-5 md:ml-4" />
+            </button>
+            <button
+                className="flex items-center p-4 rounded-lg bg-blue-600 font-medium text-white transition-colors hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            >
+                  <span className="hidden md:block">
+                      Exportar
+                  </span>{" "}
+              <PlusIcon className="h-5 md:ml-4" />
+            </button>
           </div>
-        </div>
-        <Table>
-          <TableHead>
-            <TableRow>
-              {peliculasColumns.map((column) => (
-                <TableHeaderCell
-                  key={column.header}
-                  className={classNames(
-                    'px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider',
-                    column.meta?.align,
-                  )}
-                >
-                  {column.header}
-                </TableHeaderCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {peliculas.map((pelicula) => (
-              <TableRow key={pelicula.id_pelicula}>
+        </Card>
+        <Card>
+          <Table>
+            <TableHead>
+              <TableRow>
                 {peliculasColumns.map((column) => (
-                  <TableCell
-                    key={column.header}
-                    className={classNames(
-                      'px-6 py-4 whitespace-nowrap text-sm',
-                      column.meta?.align,
-                    )}
-                  >
-                    {pelicula.titulo}
-                  </TableCell>
+                    <TableHeaderCell
+                        key={column.header}
+                        className={classNames(
+                            'px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider',
+                            column.meta?.align,
+                        )}
+                    >
+                      {column.header}
+                    </TableHeaderCell>
                 ))}
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </div>
+            </TableHead>
+            <TableBody>
+              {peliculas.map((pelicula) => (
+                  <TableRow key={pelicula.id_pelicula}>
+                    {peliculasColumns.map((column) => (
+                        <TableCell
+                            key={column.header}
+                            className={classNames(
+                                'px-6 py-4 whitespace-nowrap text-sm',
+                                column.meta?.align,
+                            )}
+                        >
+                          {pelicula.titulo}
+                        </TableCell>
+                    ))}
+                  </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </Card>
+      </Card>
   )
 }

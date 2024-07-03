@@ -10,6 +10,7 @@
   width: 4px;
   border-radius: 20px;
   overflow: hidden;
+  height: 4px;
 }
 
 /* Track */
@@ -22,7 +23,6 @@
 ::-webkit-scrollbar-thumb {
   background: rgba(79, 70, 229, 0.8);
   border-radius: 20px;
-  box-shadow: 0 10px 10px rgb(79, 70, 229);
 }
 
 /* Handle on hover */
