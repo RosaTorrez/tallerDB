@@ -27,7 +27,7 @@ async function seedCategoria() {
     // Create the "customers" table if it doesn't exist
     const createTable = await pool.query(`
       CREATE TABLE IF NOT EXISTS categoria (
-        id_categoria INT PRIMARY KEY,
+        id_categoria SERIAL PRIMARY KEY,
         nombre VARCHAR(50) NOT NULL UNIQUE,
         ultima_actualizacion TIMESTAMP NOT NULL
       );

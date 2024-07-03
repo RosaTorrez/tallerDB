@@ -9,7 +9,7 @@ import { redirect } from "next/navigation";
 import { createClientDb } from "@/app/lib/queries";
 import { createActorDb } from "@/app/lib/queries";
 import { createMoviesDb } from "@/app/lib/queries";
-import { createCategoriesDb } from "@/app/lib/queries"; 
+import { createCategoriesDb, updateCategory } from "@/app/lib/queries";
 
 import { pool } from "@/utils/connector";
 
@@ -296,7 +296,44 @@ export async function createCategories(state:any, formData:FormData) {
         };
       }
       revalidatePath("/dashboard/categories/ListCategories");
-      redirect("/dashboard/Categories/ListCategories");
+      redirect("/dashboard/categories/ListCategories");
+}
+
+export async function updateCategoryDb(id: number, state:any, formData:FormData) {
+    const validateFields = createCategoriesSchema.safeParse({
+        nombre: formData.get("name"),
+    });
+    console.log(validateFields);
+
+    if (!validateFields.success) {
+        return {
+            errors: validateFields.error.flatten().fieldErrors,
+            message: "Por favor, corrija los errores en el formulario",
+            success: true,
+        };
+    }
+
+    const categoria: Categoria = {
+        id_categoria: id,
+        ...validateFields.data,
+    } as Categoria;
+    try {
+        await updateCategory(categoria)
+    } catch (e: any) {
+        return {
+            error:
+                e instanceof z.ZodError
+                    ? e.issues
+                    : [
+                        {
+                            path: ["unknown"],
+                            message: e.message,
+                        },
+                    ],
+        };
+    }
+    revalidatePath("/dashboard/categories/ListCategories");
+    redirect("/dashboard/categories/ListCategories");
 }
 
 export async function deleteClient(id: number) {

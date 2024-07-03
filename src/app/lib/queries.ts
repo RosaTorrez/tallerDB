@@ -149,12 +149,27 @@ export async function createMoviesDb(pelicula: Pelicula) {
 
 export async function createCategoriesDb(categoria:Categoria) {
   try {
-    const query = `SELECT agregar_cliente($1);`;
+    const query = `INSERT INTO categoria (nombre, ultima_actualizacion) VALUES ($1, NOW()) RETURNING *;`;
     const values = [
       categoria.nombre,
     ];
     const res = await pool.query(query, values);
-    return res;
+    return res.rows[0];
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to create client.");
+  }
+}
+
+export async function updateCategory(categoria:Categoria) {
+  try {
+    const query = `UPDATE categoria SET nombre = $1, ultima_actualizacion = NOW() WHERE id_categoria = $2 RETURNING *;`;
+    const values = [
+      categoria.nombre,
+        categoria.id_categoria
+    ];
+    const res = await pool.query(query, values);
+    return res.rows[0];
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to create client.");
@@ -291,4 +306,17 @@ export async function fetchClientById(id: string): Promise<Cliente>{
     console.error("Database Error:", error);
     throw new Error("Failed to fetch client data.");
   }
+}
+
+export async function fetchCategoryById(id: string): Promise<Categoria> {
+  try {
+    const query = `SELECT * FROM categoria WHERE id_categoria = $1;`;
+    const value = [id];
+    const category = await pool.query<Categoria>(query, value);
+    return category.rows[0];
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch category data.");
+  }
+
 }
