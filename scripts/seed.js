@@ -13,6 +13,7 @@ const {
   users,
 } = require("../src/app/lib/placeholder-data.js");
 const bcrypt = require("bcrypt");
+const { fuchsia } = require("tailwindcss/colors.js");
 
 async function seedActor(actor) {
   try {
@@ -375,7 +376,7 @@ $$ LANGUAGE plpgsql;
 `);
 }
 
-async function listeMovie(){
+async function listeMovie() {
   await pool.query(`
     CREATE OR REPLACE FUNCTION buscar_peli(peli_titulo varchar)
 RETURNS TABLE(
@@ -401,7 +402,7 @@ $$ LANGUAGE plpgsql;
 `);
 }
 
-async function updateMovie(){
+async function updateMovie() {
   await pool.query(`
     CREATE OR REPLACE FUNCTION actualizar_peli(
     peli_id INTEGER,
@@ -436,7 +437,7 @@ $$ LANGUAGE plpgsql;
 `);
 }
 
-async function dropMovie(){
+async function dropMovie() {
   await pool.query(`
     CREATE OR REPLACE FUNCTION borrar_peli(id_peli INTEGER)
 RETURNS VOID AS $$
@@ -445,5 +446,242 @@ BEGIN
     WHERE id_peli = id_pelicula;
 END;
 $$ LANGUAGE plpgsql;
+`);
+}
+
+async function createClient() {
+  await pool.query(`
+    CREATE OR REPLACE FUNCTION agregar_cliente(
+    cliente_nombre VARCHAR,
+    cliente_apellido VARCHAR,
+    cliente_correo VARCHAR,
+    cliente_telefono INT
+)
+RETURNS VOID AS $$
+BEGIN
+    INSERT INTO cliente (
+        nombre,
+        apellido,
+        correo_electronico,
+        telefono
+    )
+    VALUES(
+        cliente_nombre,
+        cliente_apellido,
+        cliente_correo,
+        cliente_telefono
+    );
+END;
+$$ LANGUAGE plpgsql;
+`);
+}
+
+async function listClient() {
+  await pool.query(`
+    CREATE OR REPLACE FUNCTION buscar_cliente(ide_cliente INTEGER)
+RETURNS TABLE(
+    id_cliente INTEGER,
+    nombre VARCHAR,
+    apellido VARCHAR,
+    correo_electronico VARCHAR,
+    activo BOOLEAN,
+    telefono INT
+) AS $$
+BEGIN
+    RETURN QUERY
+    SELECT * FROM cliente c
+    WHERE c.id_cliente = ide_cliente;
+END;
+$$ LANGUAGE plpgsql;
+`);
+}
+
+async function updateClient() {
+  await pool.query(`
+    CREATE OR REPLACE FUNCTION actualizar_cliente(
+    cliente_id INTEGER,
+    cliente_name VARCHAR,
+    cliente_apellido VARCHAR,
+    cliente_correo VARCHAR,
+    cliente_activo BOOLEAN,
+    cliente_telefono INT
+)
+RETURNS VOID AS $$
+BEGIN
+    UPDATE cliente SET
+    nombre = cliente_name,
+    apellido = cliente_apellido,
+    correo_electronico = cliente_correo,
+    activo = cliente_activo,
+    telefono = cliente_telefono
+    WHERE id_cliente = cliente_id;
+END;
+$$ LANGUAGE plpgsql;
+`);
+}
+
+async function dropClient() {
+  await pool.query(`
+    CREATE OR REPLACE FUNCTION eliminar_cliente(ide_cliente INTEGER)
+RETURNS VOID AS $$
+BEGIN
+    DELETE FROM cliente
+    WHERE ide_cliente = id_cliente;
+END;
+$$ LANGUAGE plpgsql;
+`);
+}
+
+async function disableClient() {
+  await pool.query(`
+    CREATE OR REPLACE FUNCTION dar_de_baja(ide_cliente INTEGER)
+RETURNS VOID AS $$
+BEGIN
+    UPDATE cliente SET
+    activo = FALSE
+    WHERE ide_cliente = id_cliente;
+END;
+$$ LANGUAGE plpgsql;
+`);
+}
+
+async function ableClient() {
+  await pool.query(`
+    CREATE OR REPLACE FUNCTION dar_de_alta(ide_cliente INTEGER)
+RETURNS VOID AS $$
+BEGIN
+   		UPDATE cliente SET
+    		activo = TRUE
+    		WHERE ide_cliente = id_cliente;
+END;
+$$ LANGUAGE plpgsql;
+`);
+}
+
+//procesos almacenados
+
+async function getAllActors() {
+  await pool.query(`
+    CREATE PROCEDURE sp_GetAllActors 
+	AS
+BEGIN 
+SELECT * FROM actor;
+ END;
+`);
+}
+
+async function getAllClients() {
+  await pool.query(`
+    CREATE PROCEDURE sp_GetAllClients 
+AS
+ BEGIN
+ SELECT * FROM cliente;
+ END;
+`);
+}
+
+async function getMoviesByDuration() {
+  await pool.query(`
+    CREATE PROCEDURE sp_GetMoviesByDuration
+ @MaxDuration INTERVAL 
+AS
+ BEGIN 
+SELECT * FROM pelicula WHERE duracion <= @MaxDuration;
+ END;
+`);
+}
+
+async function getRecentlyRentedMovies() {
+  await pool.query(`
+    CREATE PROCEDURE sp_GetRecentlyRentedMovies
+ AS BEGIN
+ SELECT p.titulo, p.descripcion, p.ano_estreno, r.fecha_renta, r.fecha_pago FROM pelicula p 
+INNER JOIN inventario i ON p.id_pelicula = i.id_pelicula
+INNER JOIN renta r ON i.id_inventario = r.id_inventario
+WHERE r.fecha_renta >= DATEADD(day, -7, CURRENT_TIMESTAMP); 
+END;
+`);
+}
+
+//tiggers
+
+async function avoidUpdateLanguage() {
+  await pool.query(`
+    CREATE OR REPLACE FUNCTION trg_evitar_actualizar_idioma()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF TG_OP = 'UPDATE' THEN
+        RAISE EXCEPTION 'No se puede actualizar el nombre de un idioma.';
+    END IF;
+    RETURN NULL;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_evitar_actualizar_idioma
+BEFORE UPDATE ON idioma
+FOR EACH ROW
+EXECUTE FUNCTION trg_evitar_actualizar_idioma();
+`);
+}
+
+async function avoidEraseCategory() {
+  await pool.query(`
+    CREATE OR REPLACE FUNCTION trg_evitar_eliminar_categoria()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF EXISTS (
+        SELECT 1
+        FROM categoria_pelicula
+        WHERE id_categoria = OLD.id_categoria
+        LIMIT 1
+    ) THEN
+        RAISE EXCEPTION 'No se puede eliminar esta categoría porque está asociada a una película.';
+    END IF;
+    RETURN OLD;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_evitar_eliminar_categoria
+BEFORE DELETE ON categoria
+FOR EACH ROW
+EXECUTE FUNCTION trg_evitar_eliminar_categoria();
+`);
+}
+
+async function updateChangesInMovies() {
+  await pool.query(`
+    CREATE OR REPLACE FUNCTION trg_actualizar_ultima_actualizacion_categoria()
+RETURNS TRIGGER AS $$
+BEGIN
+    UPDATE categoria
+    SET ultima_actualizacion = CURRENT_TIMESTAMP
+    WHERE id_categoria = NEW.id_categoria;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_actualizar_ultima_actualizacion_categoria
+AFTER INSERT ON categoria_pelicula
+FOR EACH ROW
+EXECUTE FUNCTION trg_actualizar_ultima_actualizacion_categoria()
+`);
+}
+
+async function uniqueEmail() {
+  await pool.query(`
+    CREATE OR REPLACE FUNCTION validar_email_unico()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF EXISTS (SELECT 1 FROM cliente WHERE correo_electronico = NEW.correo_electronico) THEN
+        RAISE EXCEPTION 'El correo electrónico ya está registrado.';
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trigger_validar_email_unico
+BEFORE INSERT ON cliente
+FOR EACH ROW
+EXECUTE FUNCTION validar_email_unico();
 `);
 }

@@ -9,7 +9,7 @@ import {
 } from "./definitions";
 import { formatCurrency } from "./utils";
 import { pool } from "@/utils/connector";
-import {ITEMS_PER_PAGE} from "@/app/lib/variables";
+import { ITEMS_PER_PAGE } from "@/app/lib/variables";
 
 export async function fetchRevenue() {
   try {
@@ -102,7 +102,6 @@ export async function fetchCardData() {
     throw new Error("Failed to fetch card data.");
   }
 }
-
 
 export async function fetchFilteredInvoices(
   query: string,

@@ -15,9 +15,7 @@ export default function SideNav() {
         </div>
       </Link>
       <div className="flex grow md:justify-between justify-center gap-2 space-x-2 flex-col md:space-x-0 md:space-y-2">
-        <div
-          className={"flex flex-col gap-2 md:h-[75vh] h-auto overflow-auto"}
-        >
+        <div className={"flex flex-col gap-2 md:h-[75vh] h-auto overflow-auto"}>
           <NavLinks />
         </div>
 
