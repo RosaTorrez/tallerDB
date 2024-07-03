@@ -376,7 +376,7 @@ $$ LANGUAGE plpgsql;
 `);
 }
 
-async function listeMovie(){
+async function listeMovie() {
   await pool.query(`
     CREATE OR REPLACE FUNCTION buscar_peli(peli_titulo varchar)
 RETURNS TABLE(
@@ -402,7 +402,7 @@ $$ LANGUAGE plpgsql;
 `);
 }
 
-async function updateMovie(){
+async function updateMovie() {
   await pool.query(`
     CREATE OR REPLACE FUNCTION actualizar_peli(
     peli_id INTEGER,
@@ -437,7 +437,7 @@ $$ LANGUAGE plpgsql;
 `);
 }
 
-async function dropMovie(){
+async function dropMovie() {
   await pool.query(`
     CREATE OR REPLACE FUNCTION borrar_peli(id_peli INTEGER)
 RETURNS VOID AS $$
@@ -449,7 +449,7 @@ $$ LANGUAGE plpgsql;
 `);
 }
 
-async function createClient(){
+async function createClient() {
   await pool.query(`
     CREATE OR REPLACE FUNCTION agregar_cliente(
     cliente_nombre VARCHAR,
@@ -476,7 +476,7 @@ $$ LANGUAGE plpgsql;
 `);
 }
 
-async function listClient(){
+async function listClient() {
   await pool.query(`
     CREATE OR REPLACE FUNCTION buscar_cliente(ide_cliente INTEGER)
 RETURNS TABLE(
@@ -496,7 +496,7 @@ $$ LANGUAGE plpgsql;
 `);
 }
 
-async function updateClient(){
+async function updateClient() {
   await pool.query(`
     CREATE OR REPLACE FUNCTION actualizar_cliente(
     cliente_id INTEGER,
@@ -520,7 +520,7 @@ $$ LANGUAGE plpgsql;
 `);
 }
 
-async function dropClient(){
+async function dropClient() {
   await pool.query(`
     CREATE OR REPLACE FUNCTION eliminar_cliente(ide_cliente INTEGER)
 RETURNS VOID AS $$
@@ -532,7 +532,7 @@ $$ LANGUAGE plpgsql;
 `);
 }
 
-async function disableClient(){
+async function disableClient() {
   await pool.query(`
     CREATE OR REPLACE FUNCTION dar_de_baja(ide_cliente INTEGER)
 RETURNS VOID AS $$
@@ -545,7 +545,7 @@ $$ LANGUAGE plpgsql;
 `);
 }
 
-async function ableClient(){
+async function ableClient() {
   await pool.query(`
     CREATE OR REPLACE FUNCTION dar_de_alta(ide_cliente INTEGER)
 RETURNS VOID AS $$
@@ -560,7 +560,7 @@ $$ LANGUAGE plpgsql;
 
 //procesos almacenados
 
-async function getAllActors(){
+async function getAllActors() {
   await pool.query(`
     CREATE PROCEDURE sp_GetAllActors 
 	AS
@@ -570,7 +570,7 @@ SELECT * FROM actor;
 `);
 }
 
-async function getAllClients(){
+async function getAllClients() {
   await pool.query(`
     CREATE PROCEDURE sp_GetAllClients 
 AS
@@ -580,7 +580,7 @@ AS
 `);
 }
 
-async function getMoviesByDuration(){
+async function getMoviesByDuration() {
   await pool.query(`
     CREATE PROCEDURE sp_GetMoviesByDuration
  @MaxDuration INTERVAL 
@@ -591,7 +591,7 @@ SELECT * FROM pelicula WHERE duracion <= @MaxDuration;
 `);
 }
 
-async function getRecentlyRentedMovies(){
+async function getRecentlyRentedMovies() {
   await pool.query(`
     CREATE PROCEDURE sp_GetRecentlyRentedMovies
  AS BEGIN
@@ -605,7 +605,7 @@ END;
 
 //tiggers
 
-async function avoidUpdateLanguage(){
+async function avoidUpdateLanguage() {
   await pool.query(`
     CREATE OR REPLACE FUNCTION trg_evitar_actualizar_idioma()
 RETURNS TRIGGER AS $$
@@ -624,7 +624,7 @@ EXECUTE FUNCTION trg_evitar_actualizar_idioma();
 `);
 }
 
-async function avoidEraseCategory(){
+async function avoidEraseCategory() {
   await pool.query(`
     CREATE OR REPLACE FUNCTION trg_evitar_eliminar_categoria()
 RETURNS TRIGGER AS $$
@@ -648,7 +648,7 @@ EXECUTE FUNCTION trg_evitar_eliminar_categoria();
 `);
 }
 
-async function updateChangesInMovies(){
+async function updateChangesInMovies() {
   await pool.query(`
     CREATE OR REPLACE FUNCTION trg_actualizar_ultima_actualizacion_categoria()
 RETURNS TRIGGER AS $$
@@ -667,7 +667,7 @@ EXECUTE FUNCTION trg_actualizar_ultima_actualizacion_categoria()
 `);
 }
 
-async function uniqueEmail(){
+async function uniqueEmail() {
   await pool.query(`
     CREATE OR REPLACE FUNCTION validar_email_unico()
 RETURNS TRIGGER AS $$

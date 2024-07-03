@@ -1,6 +1,12 @@
 import { pool } from "@/utils/connector";
-import {Actor, Categoria, Cliente, InvoicesTable, Pelicula} from "@/app/lib/definitions";
-import {ITEMS_PER_PAGE} from "@/app/lib/variables";
+import {
+  Actor,
+  Categoria,
+  Cliente,
+  InvoicesTable,
+  Pelicula,
+} from "@/app/lib/definitions";
+import { ITEMS_PER_PAGE } from "@/app/lib/variables";
 
 /**
  * Fetches all actors names from the database.
@@ -90,10 +96,15 @@ function selectHelper(tableName: string): string {
 export async function createClientDb(client: Cliente) {
   try {
     const query = `SELECT agregar_cliente($1, $2, $3, $4);`;
-    const values = [client.nombre, client.apellido, client.correo_electronico, client.telefono];
-    const  res = await pool.query(query, values);
+    const values = [
+      client.nombre,
+      client.apellido,
+      client.correo_electronico,
+      client.telefono,
+    ];
+    const res = await pool.query(query, values);
     return res;
-  }catch (error) {
+  } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to create client.");
   }
@@ -142,10 +153,9 @@ $$ LANGUAGE plpgsql;
 `);
 }
 
-
 export async function fetchFilteredClients(
-    query: string,
-    currentPage: number,
+  query: string,
+  currentPage: number,
 ): Promise<Cliente[]> {
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 

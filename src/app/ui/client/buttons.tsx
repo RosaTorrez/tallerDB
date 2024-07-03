@@ -19,7 +19,7 @@ export function UpdateClient({ id }: { id: number }) {
       href="/dashboard/client"
       className="rounded-md p-2 hover:bg-gray-600 dark:hover:bg-gray-800 bg-dark-tremor-background-subtle hover:rounded-3xl transition-all duration-300 text-white"
     >
-    <PencilIcon className="w-5" />
+      <PencilIcon className="w-5" />
     </Link>
   );
 }
@@ -28,8 +28,8 @@ export function DeleteClient({ id }: { id: number }) {
   return (
     <>
       <button className="rounded-md p-2 hover:bg-red-600 dark:hover:bg-red-800 bg-red-600 hover:rounded-3xl transition-all duration-300 text-white">
-          <span className="sr-only">Delete</span>
-          <TrashIcon className="w-5" />
+        <span className="sr-only">Delete</span>
+        <TrashIcon className="w-5" />
       </button>
     </>
   );
