@@ -1,4 +1,4 @@
-import Form from "@/app/ui/client/create-form";
+import Form from "@/app/ui/movies/create-form";
 import { Card } from "@tremor/react";
 
 export default function Page() {

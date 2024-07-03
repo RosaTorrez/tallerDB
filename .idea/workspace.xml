@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59d05a0d-2f56-484a-bfbc-3086cc51de06" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/app/lib/queries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/lib/queries.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/actors/listActors/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/actors/listActors/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/dashboard/movies/ListMovies/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/dashboard/movies/ListMovies/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/ui/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/ui/global.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -49,28 +52,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/MSI/profile/programing/del/fixed/tallerDB/public&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;npm.format.executor&quot;: &quot;Run&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\MSI\\profile\\programing\\del\\fixed\\tallerDB\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "dart.analysis.tool.window.visible": "false",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MSI\profile\programing\del\fixed\tallerDB\src\app\dashboard\categories" />
+      <recent name="C:\Users\MSI\profile\programing\del\fixed\tallerDB\src\utils" />
       <recent name="C:\Users\MSI\profile\programing\del\fixed\tallerDB\public" />
       <recent name="C:\Users\MSI\profile\programing\del\fixed\tallerDB\src\app\ui\client" />
       <recent name="C:\Users\MSI\profile\programing\del\fixed\tallerDB\utils" />
-      <recent name="C:\Users\MSI\profile\programing\del\fixed\tallerDB\public\customers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\MSI\profile\programing\del\fixed\tallerDB\src" />
@@ -113,6 +107,7 @@
       <workItem from="1719759262919" duration="6489000" />
       <workItem from="1719900956302" duration="16723000" />
       <workItem from="1719944782426" duration="1438000" />
+      <workItem from="1720027439707" duration="12399000" />
     </task>
     <servers />
   </component>
@@ -121,7 +116,19 @@
     <option name="exactExcludedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/app/lib/placeholder-data.js" />
+        <option value="$PROJECT_DIR$/src/utils/connector.js" />
       </list>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/scripts/seed.js</url>
+          <line>368</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

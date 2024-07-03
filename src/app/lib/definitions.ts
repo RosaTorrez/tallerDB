@@ -1,4 +1,3 @@
-
 export type User = {
   id: string;
   name: string;
@@ -34,7 +33,6 @@ export type LatestInvoice = {
   email: string;
   amount: string;
 };
-
 
 export type LatestInvoiceRaw = Omit<LatestInvoice, "amount"> & {
   amount: number;
@@ -84,7 +82,7 @@ export type InvoiceForm = {
 };
 
 export type ClientState = {
-  errors?:{
+  errors?: {
     id_cliente?: string[];
     nombre?: string[];
     apellido?: string[];
@@ -93,8 +91,7 @@ export type ClientState = {
     telefono?: string[];
   };
   message?: string | null;
-}
-
+};
 
 // movie database types
 
@@ -103,13 +100,13 @@ export type Actor = {
   nombre: string;
   apellido: string;
   ultima_actualizacion: string;
-}
+};
 
 export type Categoria = {
   id_categoria: number;
   nombre: string;
   ultima_actualizacion: string;
-}
+};
 
 export type Cliente = {
   id_cliente: number;
@@ -118,7 +115,7 @@ export type Cliente = {
   correo_electronico: string;
   activo: boolean;
   telefono: number;
-}
+};
 
 export type Pelicula = {
   id_pelicula: number;
@@ -139,25 +136,25 @@ export type ActorPelicula = {
   id_actor: number;
   id_pelicula: number;
   ultima_actualizacion: string;
-}
+};
 
 export type CategoriaPelicula = {
   id_pelicula: number;
   id_categoria: number;
   ultima_actualizacion: string;
-}
+};
 
 export type Inventario = {
   id_inventario: number;
   id_pelicula: number;
   ultima_actualizacion: string;
-}
+};
 
 export type Idioma = {
   id_idioma: number;
   nombre_idioma: string;
   ultima_actualizacion: string;
-}
+};
 
 export type Renta = {
   id_renta: number;
@@ -165,5 +162,4 @@ export type Renta = {
   id_cliente: number;
   fecha_pago: string;
   ultima_actualizacion: string;
-}
-
+};

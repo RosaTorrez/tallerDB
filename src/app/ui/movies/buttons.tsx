@@ -2,13 +2,13 @@ import { PencilIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { deleteClient } from "@/app/lib/actions";
 
-export function CreateClient() {
+export function createActor() {
   return (
     <Link
-      href="/dashboard/client/create"
+      href="/dashboard/actors/createActors"
       className="flex h-full items-center rounded-lg bg-blue-600 p-4 text-sm font-medium text-white transition-colors hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
     >
-      <span className="hidden md:block">Create Client</span>{" "}
+      <span className="hidden md:block">Create Actor</span>{" "}
       <PlusIcon className="h-5 md:ml-4" />
     </Link>
   );

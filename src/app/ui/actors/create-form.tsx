@@ -4,7 +4,7 @@ import { PhoneIcon, UserIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import { Button } from "@/app/ui/button";
 import { Card, NumberInput, TextInput } from "@tremor/react";
 import { useFormState } from "react-dom";
-import { createClient } from "@/app/lib/actions";
+import { createActor } from "@/app/lib/actions";
 import { lusitana } from "@/app/ui/fonts";
 
 export default function Form() {
@@ -12,12 +12,12 @@ export default function Form() {
     errors: {},
     message: null,
   };
-  const [state, dispatch] = useFormState(createClient, null);
+  const [state, dispatch] = useFormState(createActor, null);
   return (
     <div className={"flex-1 space-y-5 h-full"}>
       <Card className="flex w-full items-center justify-center shadow-2xl box-decoration-clone">
         <h1 className={`${lusitana.className} text-4xl`}>
-          Registra un nuevo cliente
+          Registra un nuevo actor
         </h1>
       </Card>
       <form action={dispatch}>
@@ -29,7 +29,7 @@ export default function Form() {
               name="name"
               type="text"
               className={"py-3 text-base font-bold"}
-              placeholder="Enter client name"
+              placeholder="Enter actor name"
               error={state?.errors?.nombre && state.success}
               errorMessage={state?.errors?.nombre && state.errors.nombre[0]}
             />
@@ -42,40 +42,12 @@ export default function Form() {
               name="lastName"
               type="text"
               className={"py-3 text-base font-bold"}
-              placeholder="Enter client last name"
+              placeholder="Enter actor last name"
               error={state?.errors?.apellido && state.success}
               errorMessage={state?.errors?.apellido && state.errors.apellido[0]}
             />
           </div>
 
-          <div className="relative">
-            <TextInput
-              icon={EnvelopeIcon}
-              id="email"
-              name="email"
-              type="email"
-              className={"py-3 text-base font-bold"}
-              placeholder="Enter client email"
-              error={state?.errors?.correo_electronico && state.success}
-              errorMessage={
-                state?.errors?.correo_electronico &&
-                state.errors.correo_electronico[0]
-              }
-            />
-          </div>
-
-          <div className="relative">
-            <NumberInput
-              icon={PhoneIcon}
-              enableStepper={false}
-              id="phone"
-              name="phone"
-              className={"py-3 text-base font-bold"}
-              placeholder="Enter client phone number"
-              error={state?.errors?.telefono && state.success}
-              errorMessage={state?.errors?.telefono && state.errors.telefono[0]}
-            />
-          </div>
           {state?.message && (
             <p className="mt-2 text-red-500">{state?.message}</p>
           )}
