@@ -55,7 +55,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "dart.analysis.tool.window.visible": "false",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "project.scopes",
+    "ts.external.directory.path": "C:\\Users\\MSI\\profile\\programing\\del\\fixed\\tallerDB\\node_modules\\typescript\\lib"
   }
 }]]></component>
   <component name="RecentsManager">

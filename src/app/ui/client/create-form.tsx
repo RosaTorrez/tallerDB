@@ -2,10 +2,12 @@
 import Link from "next/link";
 import { PhoneIcon, UserIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 import { Button } from "@/app/ui/button";
-import { Card, NumberInput, TextInput } from "@tremor/react";
+import {Callout, Card, NumberInput, TextInput} from "@tremor/react";
 import { useFormState } from "react-dom";
 import { createClient } from "@/app/lib/actions";
 import { lusitana } from "@/app/ui/fonts";
+import {Simulate} from "react-dom/test-utils";
+import error = Simulate.error;
 
 export default function Form() {
   const initialStatus = {
@@ -13,6 +15,7 @@ export default function Form() {
     message: null,
   };
   const [state, dispatch] = useFormState(createClient, null);
+  console.log(state)
   return (
     <div className={"flex-1 space-y-5 h-full"}>
       <Card className="flex w-full items-center justify-center shadow-2xl box-decoration-clone">
@@ -79,6 +82,16 @@ export default function Form() {
           {state?.message && (
             <p className="mt-2 text-red-500">{state?.message}</p>
           )}
+          {
+            state?.error && state.error.map((err)=>{
+                return(
+                    <Callout title={"Error"} color={"red"} className={"mt-2"}>
+                        {err.message}
+                    </Callout>
+                )
+
+            })
+          }
         </Card>
         <div className="mt-6 flex justify-center md:justify-end gap-4">
           <Link

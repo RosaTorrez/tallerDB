@@ -162,6 +162,7 @@ export async function createClient(state: any, formData: FormData) {
   try {
     await createClientDb(client);
   } catch (e: any) {
+      console.log(e)
     return {
       error:
         e instanceof z.ZodError

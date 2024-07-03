@@ -104,9 +104,9 @@ export async function createClientDb(client: Cliente) {
     ];
     const res = await pool.query(query, values);
     return res;
-  } catch (error) {
-    console.error("Database Error:", error);
-    throw new Error("Failed to create client.");
+  } catch (error: any) {
+    //console.error("Database Error:", error.message);
+    throw new Error(`Failed to create client. ${error.message}`);
   }
 }
 
