@@ -165,14 +165,11 @@ export async function createClient(state: any, formData: FormData) {
       console.log(e)
     return {
       error:
-        e instanceof z.ZodError
-          ? e.issues
-          : [
+        e instanceof z.ZodError ? e.issues : [
               {
                 path: ["unknown"],
                 message: e.message,
-              },
-            ],
+              },],
     };
   }
   revalidatePath("/dashboard/client/ListClients");

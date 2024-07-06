@@ -750,4 +750,4 @@ const renta = [
 ];
 
 
-export {actors, categories, clients, movies, actorPelicula, categoriaPelicula, inventario, idioma, renta };
+export { users, customers, invoices, revenue };

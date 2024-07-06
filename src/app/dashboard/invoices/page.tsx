@@ -1,8 +1,11 @@
 import { Card, Divider } from "@tremor/react";
 import { fetchLatestInvoices } from "@/app/lib/data";
+import * as process from "node:process";
 
 export default async function InvoicePage() {
   const res = await fetchLatestInvoices();
+  const dataApi = await fetch(`${process.env.BASE_URL}/api/invoices`);
+  console.log(dataApi)
   return (
     <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
       {res.map((item) => (
